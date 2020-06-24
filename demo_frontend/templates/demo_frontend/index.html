@@ -1,0 +1,170 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Domainnees Dataset Builder</title>
+  <meta name="description" content="Domainness Dataset Builder">
+  <meta name="author" content="SitePoint">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+<!-- header -->
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-muted">Project Info</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Email</a></li>
+            <li><a href="#" class="text-white">GitHub</a></li>
+            <li><a href="#" class="text-white">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white"><a href="{% url 'logout' %}">Logout</a></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+        </svg>
+        <strong>  Domainnees Dataset Builder</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- alerts -->
+  {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" style="padding-left: 2%; padding-top: 2%; padding-bottom:2%">
+            {{ message }}
+        </div>
+    {% endfor %}
+  {% endif %}
+
+<!-- jumbo -->
+
+<div class="media" style="padding-top: 20px;">
+  <!-- <img src="..." class="mr-3" alt="..."> -->
+  <div class="media-body", style="padding-left: 2%;">
+    <h5 class="mt-0">Task Description</h5>
+    <p style="padding-left: 0%;">Hello! We are researchers from the <a href="http://www.forwarddatalab.org/">FORWARD Lab @ UIUC</a> and we need your help collecting data. You can help us with our project by classifying words into the subjects you think they belong to.</p>
+  </div>
+</div>
+
+<!-- prompt -->
+<div style="padding-left: 2%; padding-top: 2%; padding-bottom:2%">
+  <h>Which subject do you think this words belongs to: </h>
+</div>
+
+<!-- word and context -->
+<div class="card" style="width: 100%; text-align: center;">
+  <h1 style="font-size: 72px" id="wiki_title"><mark></mark></h1>
+  <hr>
+  <div class="card-body" style="padding-top: 5px">
+    <h3>In context: </h3>
+    <!-- <h5 class="card-title">Card title</h5> -->
+    <!-- wiki summary programatic -->
+    <!-- <p class="card-text" id="wiki_summary"></p> -->
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <iframe id="context_frame" style="width:75%; height:300"></iframe>
+  </div>
+  <div class="card-body">
+    <h3>Further context: </h3>
+    <h2><a id="context_google" target="_blank">Google</a></h2>
+  </div>
+</div>
+
+<!-- le butt -->
+<div style="text-align: center; padding-top: 10px;">
+  <button type="button" class="btn btn-primary" style="font-size: 30px;">Computer Science</button>
+  <button type="button" class="btn btn-secondary" style="font-size: 30px;">Physics</button>
+  <button type="button" class="btn btn-success" style="font-size: 30px;">Mathematics</button>
+  <button type="button" class="btn btn-danger" style="font-size: 30px;">Biology</button>
+  <button type="button" class="btn btn-warning" style="font-size: 30px;">Chemistry</button>
+  <button type="button" class="btn btn-info" style="font-size: 30px;">History</button>
+  <button type="button" class="btn btn-dark" style="font-size: 30px;">Stop Words</button>
+  <button type="button" class="btn btn-dark" style="font-size: 30px;">Other</button>
+</div>
+<hr>
+<div style="text-align: center;">
+  <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick="window.location.reload();">Submit</button>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script>
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    // TODO: Modify function to read txt file and not use hardcoded value. Faced issue with browser security restrctions reading local files so reverted to hardcoded values for now. 
+    function readfileautomatically () {
+        // choose random index 
+        var random = getRandomInt(100);
+        console.log(random);
+
+        // harcoded options
+        var txt = ["auto","break", "case", "char", "continue", "do", "default", "const", "double", "else", "enum", "extern", "for", "if", "goto", "float", "int", "long", "register", "return", "signed", "static", "sizeof", "short", "struct", "switch", "typedef", "union", "void", "while", "volatile", "unsigned", "1951 Bulgarian Cup", "Paris lace", "Naomi Tani", "Trichogypsia", "Kamoinge", "Bad Tabarz", "Peter Tannock", "Cherdynsky District", "Chantal Singer", "Judith S. Stern", "Sophie Trudeau (musician)", "Charles de Eendero", "Rhapsody No. 1 (Bartók)", "Thomas Percy (Pilgrimage of Grace)", "Home Economics Building (Torrance High School)", "Boophis albipunctatus", "Criminal Code of Belarus", "Iraq–Jordan relations", "Stone Brothers Racing", "Martigan Belt: An Adventure in the Asteroids", "St. Andrew's Basilica, Arthunkal", "1978 ABC Championship for Women", "Vu T. Thu Ha", "Emporia Formation", "Nellikunnu", "Peter Daka", "Rodrigo Faro", "Satonari", "Exo-CBX", "Vesyoly, Prokhorovsky District, Belgorod Oblast", "Thomas McKean Thompson McKennan", "Cool warehouse", "Goodbye Dear Wife", "City bus service no. 20 (Ljubljana)", "Leo Kurauzvione", "Izu stingray", "Conrad Davis Mock", "Bristol Jamia Mosque", "Osbert de Bayeux", "Magela hardyhead", "Robert Mermoud", "Greatness", "Heritage Guitars", "Brian Davis (American football)", "Liverpool Ramblers A.F.C.", "Pierre Cahuzac", "John de Graham", "Automata theory", "List of municipalities in Hakkari Province", "Broyles Award", "2012–13 Cowdenbeath F.C. season", "Deep map", "Megan Rice", "Tails Adventure", "Ephrata Municipal Airport", "FIS Freestyle World Ski Championships 2011 – Women's slopestyle", "George Beurling", "Daniel Pelosi", "The Homecoming of Odysseus (1922 film)", "SandHoke Early College", "Lilley, Hertfordshire", "Francis Augustus Cox", "1945 Montana Grizzlies football team", "César Zeoula", "TWR 70-000 series", "Ron Fountain", "HD 96660", "Poylu, Poylu", "Rashidabad, Tehran", "Discovery of human antiquity", "Letterbreen", "Richard Gwyn (Canadian writer)", "Walang Tulugan with the Master Showman", "Kamloops Water Aerodrome", "Mound Township, Effingham County, Illinois", "The Dragnet Solar Pons et al.", "Rakhee Sandilya", "Inter Press Service", "List of abductors of the human body", "Solliès-Pont", "Ganjikunta", "French Canadians", "First family of the United States", "Crabapple, Georgia", "RAF Joyce Green", "International Confederation of Revolver Enthusiasts", "1977 French Open – Mixed Doubles", "Norman Creek (Missouri)", "Elizabeth railway station"];
+
+        // display random keywords chosen in a large title
+        document.getElementById("wiki_title").innerHTML = txt[random];
+
+        // use iframe to show wikipedia page as well
+        // base url
+        var wiki_url_start = "https://en.wikipedia.org/wiki/";
+        // concatenate to create full url
+        var wiki_url_full = wiki_url_start.concat(txt[random]);
+        document.getElementById("context_frame").src = wiki_url_full;
+
+        // use google to allow user to do further research
+        // base url
+        var google_url_start = "https://www.google.com/search?q=";
+        // replace spaces in keyword/phrase with %20
+        var google_query = txt[random].replace(' ', '%20');
+        // concatenate to create full url
+        var google_url_full = google_url_start.concat(google_query);
+        document.getElementById("context_google").href = google_url_full;
+
+        console.log(wiki_url_full);
+        console.log(txt[random]);
+
+    }
+
+    window.onload = function() {
+        readfileautomatically();
+    };
+</script>
+
+</body>
+</html>
+
+

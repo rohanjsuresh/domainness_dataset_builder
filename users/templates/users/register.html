@@ -1,0 +1,105 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Domainnees Dataset Builder</title>
+  <meta name="description" content="Domainness Dataset Builder">
+  <meta name="author" content="SitePoint">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!-- header -->
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Project Info</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Email</a></li>
+              <li><a href="#" class="text-white">GitHub</a></li>
+              <li><a href="#" class="text-white">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          </svg>
+          <strong>  Domainnees Dataset Builder</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- alerts -->
+  {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" style="padding-left: 2%; padding-top: 2%; padding-bottom:2%">
+            {{ message }}
+        </div>
+    {% endfor %}
+  {% endif %}
+        
+  
+  <!-- jumbo -->
+  
+  <div class="media" style="padding-top: 20px;">
+    <!-- <img src="..." class="mr-3" alt="..."> -->
+    <div class="media-body", style="padding-left: 2%;">
+      <h5 class="mt-0">Task Description</h5>
+      <p style="padding-left: 0%;">Hello! We are researchers from the <a href="http://www.forwarddatalab.org/">FORWARD Lab @ UIUC</a> and we need your help collecting data. You can help us with our project by classifying words into the subjects you think they belong to.</p>
+    </div>
+  </div>
+
+
+<!-- Form - Django -->
+{% load crispy_forms_tags %}
+<div class="content-section" style="padding-left: 2%;padding-right: 48%">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"></legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Register</button>
+        </div>
+    </form>
+
+    <!-- Redirect user to login page -->
+    <div class="border=top pt-3">
+        <small class="text-muted">
+          <!-- TODO: Replace local address with % url % (django syntax to use non-static url) -->
+            Already have an account? <a class="ml-2" href="http://127.0.0.1:8000/">Sign In</a>
+        </small>
+    </div>
+</div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
