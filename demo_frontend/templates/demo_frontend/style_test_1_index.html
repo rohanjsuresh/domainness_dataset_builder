@@ -1,3 +1,5 @@
+<!-- TEST STYLE - NOT USED IN ACTUAL -->
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -112,14 +114,29 @@
 <!-- word and context -->
 <div class="card" style="width: 100%; text-align: center;">
   <h1 style="font-size: 72px" id="wiki_title"><mark></mark></h1>
-  <hr></hr>
-  <h3>Select Keyword/Keyphrases: </h3>
+  <hr>
   <div style="padding-bottom: 2%" id="button_generate"></div>
-  <h3 id="display_user_selection"></h3>
+  <hr>
+  <div class="card-body" style="padding-top: 5px">
+    <h3>In context: </h3>
+    <!-- <h5 class="card-title">Card title</h5> -->
+    <!-- wiki summary programatic -->
+    <!-- <p class="card-text" id="wiki_summary"></p> -->
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <iframe id="context_frame" style="width:75%; height:300"></iframe>
+  </div>
+  <div class="card-body">
+    <h3>Further context: </h3>
+    <h2><a id="context_google" target="_blank">Google</a></h2>
+  </div>
+  <hr style="border-top: 3px double #8c8b8b;  ">
+  <h3>Select Keyword/Keyphrases: </h3>
+  
+  <!-- <h3 id="display_user_selection"></h3> -->
 </div>
 
 <!-- le butt -->
-<div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+<div style="text-align: center; padding-top: 10px;">
   <h3>Select Domain For Selected Keyword/Phrase:</h3>
   <button type="button" class="btn btn-primary" style="font-size: 30px;">Computer Science</button>
   <button type="button" class="btn btn-secondary" style="font-size: 30px;">Physics</button>
@@ -133,22 +150,6 @@
 <hr>
 <div style="text-align: center;">
   <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Submit</button>
-</div>
-
-<!-- context -->
-<div class="card" style="width: 100%; text-align: center;">
-  <div class="card-body" style="padding-top: 5px">
-    <h3>In context: </h3>
-    <!-- <h5 class="card-title">Card title</h5> -->
-    <!-- wiki summary programatic -->
-    <!-- <p class="card-text" id="wiki_summary"></p> -->
-    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-    <iframe id="context_frame" style="width:75%; height:300"></iframe>
-  </div>
-  <div class="card-body">
-    <h3>Further context: </h3>
-    <h2><a id="context_google" target="_blank">Google</a></h2>
-  </div>
 </div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -229,7 +230,6 @@
     function display_user_selection_func () {
       var i;
       var user_selection = "";
-      var selection_highlight = "";
       var pre = "btn pre_selected";
       var post = "btn post_selected";
       var curr_id;
@@ -237,23 +237,21 @@
 
       for (i = 0; i < phrase_len; i++) {
         curr_id = "user_input_" + i;
+        // alert(user_selection);
+        // alert(document.getElementById(curr_id).innerHTML);
         if (post.localeCompare(document.getElementById(curr_id).className) == 0) {
+          user_selection += "<mark>"
           user_selection += document.getElementById(curr_id).innerHTML;
-          user_selection += " ";
           search += document.getElementById(curr_id).innerHTML;
           search += " ";
-          selection_highlight += "<mark>"
-          selection_highlight += document.getElementById(curr_id).innerHTML;
-          selection_highlight += "</mark>";
+          user_selection += "</mark>";
         } else {
-          selection_highlight += document.getElementById(curr_id).innerHTML;
-          selection_highlight += " ";
+          user_selection += document.getElementById(curr_id).innerHTML;
+          user_selection += " ";
         }
       }
 
-      document.getElementById("display_user_selection").innerHTML = user_selection;
-      document.getElementById("wiki_title").innerHTML = selection_highlight;
-
+      document.getElementById("wiki_title").innerHTML = user_selection;
       var wiki_url_start = "https://en.wikipedia.org/wiki/";
       // concatenate to create full url
       if (search.length == 0) {
@@ -262,10 +260,6 @@
       search.replace(' ', '%20');
       var wiki_url_full = wiki_url_start.concat(search);
       document.getElementById("context_frame").src = wiki_url_full;
-
-      var google_url_start = "https://www.google.com/search?q=";
-      var google_url_full = google_url_start.concat(search);
-      document.getElementById("context_google").href = google_url_full;
     }
 
     function refresh_selection() {
@@ -274,62 +268,62 @@
 
     function validate_selection(obj) {
 
-var i;
-var first = 1;
-var prev_was_post = 0;
-var pre = "btn pre_selected";
-var post = "btn post_selected";
-var curr_id;
-for (i = 0; i < phrase_len; i++) {
-  
-  curr_id = "user_input_" + i;
-  if (post.localeCompare(document.getElementById(curr_id).className) == 0) {
-    if (first == 1) {
-      // alert("f");
-      first = 0;
-      prev_was_post = 1
-    } else if (prev_was_post == 0) {
-      // alert("zero");
-      return 0;
+      var i;
+      var first = 1;
+      var prev_was_post = 0;
+      var pre = "btn pre_selected";
+      var post = "btn post_selected";
+      var curr_id;
+      for (i = 0; i < phrase_len; i++) {
+        
+        curr_id = "user_input_" + i;
+        if (post.localeCompare(document.getElementById(curr_id).className) == 0) {
+          if (first == 1) {
+            // alert("f");
+            first = 0;
+            prev_was_post = 1
+          } else if (prev_was_post == 0) {
+            // alert("zero");
+            return 0;
+          }
+
+        } else {
+          // alert("yah");
+          prev_was_post = 0;
+        }
+
+        // alert(first);
+        // alert(prev_was_post);
+      }
+      // alert("1");
+      return 1;
     }
 
-  } else {
-    // alert("yah");
-    prev_was_post = 0;
-  }
+    // This function changes the class of the button from pre-selected <=> post-selected
+    function flip_selection(obj) {
 
-  // alert(first);
-  // alert(prev_was_post);
-}
-// alert("1");
-return 1;
-}
+      var pre = "btn pre_selected";
+      var post = "btn post_selected";
 
-// This function changes the class of the button from pre-selected <=> post-selected
-function flip_selection(obj) {
+      if (pre.localeCompare(obj.className) == 0) {
+        document.getElementById(obj.id).className = post;
+      } else if (post.localeCompare(obj.className) == 0) {
+        document.getElementById(obj.id).className = pre;
+      }
 
-var pre = "btn pre_selected";
-var post = "btn post_selected";
+      var val = validate_selection(obj);
 
-if (pre.localeCompare(obj.className) == 0) {
-  document.getElementById(obj.id).className = post;
-} else if (post.localeCompare(obj.className) == 0) {
-  document.getElementById(obj.id).className = pre;
-}
+      if (val == 0) {
+        if (pre.localeCompare(obj.className) == 0) {
+          document.getElementById(obj.id).className = post;
+        } else if (post.localeCompare(obj.className) == 0) {
+          document.getElementById(obj.id).className = pre;
+        }
+        alert("Please only select words next to each other to create a phrase");
+      } 
 
-var val = validate_selection(obj);
-
-if (val == 0) {
-  if (pre.localeCompare(obj.className) == 0) {
-    document.getElementById(obj.id).className = post;
-  } else if (post.localeCompare(obj.className) == 0) {
-    document.getElementById(obj.id).className = pre;
-  }
-  alert("Please only select words next to each other to create a phrase");
-} 
-
-display_user_selection_func();
-}
+      display_user_selection_func();
+    }
 
     window.onload = function() {
         readfileautomatically();    
