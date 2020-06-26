@@ -14,6 +14,18 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 
+  <!-- Extra styles -->
+  <style>
+    /* style for user selection buttons */
+    .pre_selected {
+      background-color: #bd2222;
+      color: white;
+    }
+    .post_selected {
+      background-color: #22bd34;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
@@ -85,6 +97,9 @@
 <div class="card" style="width: 100%; text-align: center;">
   <h1 style="font-size: 72px" id="wiki_title"><mark></mark></h1>
   <hr>
+  <h3>Select Keyword/Keyphrases: </h3>
+  <div id="button_generate"></div>
+  <hr>
   <div class="card-body" style="padding-top: 5px">
     <h3>In context: </h3>
     <!-- <h5 class="card-title">Card title</h5> -->
@@ -122,6 +137,9 @@
 
 <script>
 
+      // global variables
+      var phrase_len = 0;
+
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
@@ -154,13 +172,54 @@
         var google_url_full = google_url_start.concat(google_query);
         document.getElementById("context_google").href = google_url_full;
 
+        // call function to create buttons
+        create_button_selection(txt[random]);
+
+        // logs for debugging
         console.log(wiki_url_full);
         console.log(txt[random]);
 
     }
 
+    // This function splits the keyword/phrase into an array of words, and renders them as clickable buttons that the user can select as appropriate 
+    // keywords or keyphrases
+    function create_button_selection (keywp) {
+      // split keyphrase into array
+      var key_arr = keywp.split(" ");
+
+      
+      // generate html
+      var i;
+      phrase_len = key_arr.length;
+      var html = ""
+      for (i = 0; i < key_arr.length; i++) {
+        html += '<button type="button" class="btn pre_selected" style="font-size: 30px;" onclick="flip_selection(this)" id=user_input_' + i  + '>' + key_arr[i] + '</button>';
+      }
+      
+      document.getElementById("button_generate").innerHTML = html;
+
+    }
+
+    // This function changes the class of the button from pre-selected <=> post-selected
+    function flip_selection(obj) {
+
+      var pre = "btn pre_selected";
+      var post = "btn post_selected";
+
+      if (pre.localeCompare(obj.className) == 0) {
+        document.getElementById(obj.id).className = post;
+        return;
+      }
+
+      if (post.localeCompare(obj.className) == 0) {
+        document.getElementById(obj.id).className = pre;
+        return;
+      }
+
+    }
+
     window.onload = function() {
-        readfileautomatically();
+        readfileautomatically();        
     };
 </script>
 
