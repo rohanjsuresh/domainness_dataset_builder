@@ -67,7 +67,7 @@
           {% if user.is_authenticated %}
             <h4 class="text-white"><a href="{% url 'logout' %}">Logout</a></h4>
           {% else %}
-            <h4 class="text-white"><a href="{% url 'login' %}">Login</a></h4>
+          <h4 class="text-white"><a href="{% url 'login' %}">Login</a></h4>
           {% endif %}
         </div>
       </div>
@@ -98,6 +98,7 @@
     {% endfor %}
   {% endif %}
 
+
   <!-- logged in as message -->
   <div class="media" style="padding-top: 20px;">
     {% if user.is_authenticated %}
@@ -106,7 +107,7 @@
       <h1 style="padding-left: 2%;">You are not logged in yet</h1>
     {% endif %}
   </div>
-
+  
 <!-- jumbo -->
 
 <div class="media" style="padding-top: 20px;">

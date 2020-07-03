@@ -24,6 +24,7 @@ urlpatterns = [
     path(r'', include('demo_frontend.urls')),
     path(r'admin/', admin.site.urls),
     path(r'register/', user_views.register, name='register'),
+    path(r'main_page/', user_views.main_page, name='main_page'),
     path(r'login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path(r'logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 ]

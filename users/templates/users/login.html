@@ -84,7 +84,7 @@
             {{ form|crispy }}
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Register</button>
+            <button class="btn btn-outline-info" type="submit">Login</button>
         </div>
     </form>
 
@@ -92,7 +92,7 @@
     <div class="border=top pt-3">
         <small class="text-muted">
           <!-- TODO: Replace local address with % url % (django syntax to use non-static url) -->
-            Need an account? <a class="ml-2" href="{% url 'register'%}">Register Here</a>
+            Need an account? <a class="ml-2" href="{% url 'register' %}">Register Here</a>
         </small>
     </div>
 </div>
