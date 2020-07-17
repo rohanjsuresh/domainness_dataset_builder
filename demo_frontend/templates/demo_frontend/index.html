@@ -183,10 +183,12 @@
 <hr>
 <div style="text-align: center; padding-bottom: 10px;">
   {% if user.is_authenticated %}
-  <button type="submit" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Submit</button>
+  <button type="submit" class="btn btn-light" style="font-size: 30px;">Submit</button>
+  <button type="button" class="btn btn-light" style="font-size: 30px;" onClick=refresh_selection()>Generate new title</button>
   <!-- <a href="/add_entry/"><button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() >Submit</button></a> -->
   {% else %}
-  <button type="submit" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() disabled aria-disabled="true">Submit</button>
+  <button type="submit" class="btn btn-light" style="font-size: 30px;"disabled aria-disabled="true">Submit</button>
+  <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Generate new title</button>
   {% endif %}
 </div>
 </form>
@@ -325,7 +327,9 @@
     }
 
     function refresh_selection() {
+      document.getElementById("display_user_selection").innerHTML = "";
       create_button_selection(keyword_glob);
+      location.reload();
     }
 
     function validate_selection(obj) {
