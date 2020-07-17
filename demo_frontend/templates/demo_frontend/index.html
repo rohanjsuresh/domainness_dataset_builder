@@ -41,6 +41,12 @@
       border-color: #176e20;
     }
 
+    .input_selected {
+      color: white;
+      background-color: #283c63;
+      border-color: #283c63;
+    }
+
   </style>
 </head>
 
@@ -128,42 +134,62 @@
   <hr></hr>
   <h3>Select Keyword/Keyphrases: </h3>
   <div style="padding-bottom: 2%" id="button_generate"></div>
-  <h3 id="display_user_selection"></h3>
+  <h3 id="display_user_selection" style="color: #cfc8c8;"></h3>
 </div>
 
 <!-- le butt -->
+<form method="post" action="/add_entry/">
+  {% csrf_token %}
+  <input name="keyword_input" id="keyword_input" type="text" hidden>
+  <input name="cs_input" id="cs_input" type="radio" hidden>
+  <input name="math_input" id="math_input" type="radio" hidden>
+  <input name="physics_input" id="physics_input" type="radio" hidden>
+  <input name="astro_input" id="astro_input" type="radio" hidden>
+  <input name="ee_input" id="ee_input" type="radio" hidden>
+  <input name="qbio_input" id="qbio_input" type="radio" hidden>
+  <input name="stat_input" id="stat_input" type="radio" hidden>
+  <input name="econ_input" id="econ_input" type="radio" hidden>
+  <input name="other_input" id="other_input" type="radio" hidden>
 <div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
   <h3>Select Domain For Selected Keyword/Phrase:</h3>
   <!-- selection only enabled when logged in -->
   {% if user.is_authenticated %}
-  <button type="button" class="btn btn-primary" style="font-size: 30px;">Computer Science</button>
-  <button type="button" class="btn btn-secondary" style="font-size: 30px;">Physics</button>
-  <button type="button" class="btn btn-success" style="font-size: 30px;">Mathematics</button>
-  <button type="button" class="btn btn-danger" style="font-size: 30px;">Biology</button>
-  <button type="button" class="btn btn-warning" style="font-size: 30px;">Chemistry</button>
-  <button type="button" class="btn btn-info" style="font-size: 30px;">History</button>
-  <button type="button" class="btn btn-dark" style="font-size: 30px;">Stop Words</button>
-  <button type="button" class="btn btn-dark" style="font-size: 30px;">Other</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="cs_but" onclick=click_radio_button(this)>Computer Science</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="math_but" onclick=click_radio_button(this)>Mathematics</button>
+  <!-- <button type="button" class="btn btn-secondary" style="font-size: 30px;">Mathematical Finance</button> -->
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="physics_but" onclick=click_radio_button(this)>Physics</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="astro_but" onclick=click_radio_button(this)>Astronomy</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="ee_but" onclick=click_radio_button(this)>Electrical Engineering</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="qbio_but" onclick=click_radio_button(this)>Quantitative Biology</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="stat_but" onclick=click_radio_button(this)>Statistics</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="econ_but" onclick=click_radio_button(this)>Economics</button>
+  <!-- <button type="button" class="btn btn-dark" style="font-size: 30px;">Stop Words</button> -->
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="other_but" onclick=click_radio_button(this)>Other</button>
   {% else %}
   <h4>You must login to submit responses</h4>
   <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Computer Science</button>
-  <button type="button" class="btn btn-secondary" style="font-size: 30px;" disabled aria-disabled="true">Physics</button>
-  <button type="button" class="btn btn-success" style="font-size: 30px;" disabled aria-disabled="true">Mathematics</button>
-  <button type="button" class="btn btn-danger" style="font-size: 30px;" disabled aria-disabled="true">Biology</button>
-  <button type="button" class="btn btn-warning" style="font-size: 30px;" disabled aria-disabled="true">Chemistry</button>
-  <button type="button" class="btn btn-info" style="font-size: 30px;" disabled aria-disabled="true">History</button>
-  <button type="button" class="btn btn-dark" style="font-size: 30px;" disabled aria-disabled="true">Stop Words</button>
-  <button type="button" class="btn btn-dark" style="font-size: 30px;" disabled aria-disabled="true">Other</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Mathematics</button>
+  <!-- <button type="button" class="btn btn-secondary" style="font-size: 30px;" disabled aria-disabled="true">Mathematical Finance</button> -->
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Physics</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Astronomy</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Electrical Engineering</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Quantitative Biology</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Statistics</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Economics</button>
+  <!-- <button type="button" class="btn btn-dark" style="font-size: 30px;" disabled aria-disabled="true">Stop Words</button> -->
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Other</button>
   {% endif %}
 </div>
 <hr>
 <div style="text-align: center; padding-bottom: 10px;">
   {% if user.is_authenticated %}
-  <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Submit</button>
+  <button type="submit" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Submit</button>
+  <!-- <a href="/add_entry/"><button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() >Submit</button></a> -->
   {% else %}
-  <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() disabled aria-disabled="true">Submit</button>
+  <button type="submit" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() disabled aria-disabled="true">Submit</button>
   {% endif %}
 </div>
+</form>
 
 <!-- context -->
 <div class="card" style="width: 100%; text-align: center;">
@@ -358,12 +384,117 @@ if (val == 0) {
   alert("Please only select words next to each other to create a phrase");
 } 
 
-display_user_selection_func();
+  display_user_selection_func();
+  document.getElementById("keyword_input").value = document.getElementById("display_user_selection").innerHTML;
 }
 
-    window.onload = function() {
-        readfileautomatically();    
-    };
+// This function clicks the radio button corressponding to the correct radio button
+function click_radio_button(obj) {
+  var subject = (obj.id).split("_")[0];
+  var radio_id = subject.concat("_input");
+  var button_color = window.getComputedStyle(obj).getPropertyValue("background-color");
+  button_color = button_color.split("(")[1];
+  var r = parseInt(button_color.split(",")[0], 10);
+  var g = parseInt(button_color.split(",")[1], 10);
+  var b = parseInt(button_color.split(",")[2].split(")")[0], 10);
+  var hsl = rgbToHsl(r, g, b);
+  if(document.getElementById(radio_id).checked) {
+    document.getElementById(radio_id).checked = false;
+    // alert("lighten");
+    hsl[2] = hsl[2]+0.2;
+    hsl[1] = hsl[1]+0.2;
+    var rgb = hslToRgb(hsl[0], hsl[1], hsl[2]);
+    var NewColor = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
+    obj.style.backgroundColor = NewColor;
+  }else {
+    document.getElementById(radio_id).checked = true;
+    // alert("darker");
+    hsl[2] = hsl[2]-0.2;
+    hsl[1] = hsl[1]-0.2;
+    var rgb = hslToRgb(hsl[0], hsl[1], hsl[2]);
+    var NewColor = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
+    obj.style.backgroundColor = NewColor;
+  }
+}
+
+// https://gist.github.com/mjackson/5311256
+/**
+ * Converts an RGB color value to HSL. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes r, g, and b are contained in the set [0, 255] and
+ * returns h, s, and l in the set [0, 1].
+ *
+ * @param   Number  r       The red color value
+ * @param   Number  g       The green color value
+ * @param   Number  b       The blue color value
+ * @return  Array           The HSL representation
+ */
+ function rgbToHsl(r, g, b) {
+  r /= 255, g /= 255, b /= 255;
+
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
+  var h, s, l = (max + min) / 2;
+
+  if (max == min) {
+    h = s = 0; // achromatic
+  } else {
+    var d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+
+    h /= 6;
+  }
+
+  return [ h, s, l ];
+}
+
+/**
+ * Converts an HSL color value to RGB. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes h, s, and l are contained in the set [0, 1] and
+ * returns r, g, and b in the set [0, 255].
+ *
+ * @param   Number  h       The hue
+ * @param   Number  s       The saturation
+ * @param   Number  l       The lightness
+ * @return  Array           The RGB representation
+ */
+function hslToRgb(h, s, l) {
+  var r, g, b;
+
+  if (s == 0) {
+    r = g = b = l; // achromatic
+  } else {
+    function hue2rgb(p, q, t) {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1/6) return p + (q - p) * 6 * t;
+      if (t < 1/2) return q;
+      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+      return p;
+    }
+
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    var p = 2 * l - q;
+
+    r = hue2rgb(p, q, h + 1/3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1/3);
+  }
+
+  return [ r * 255, g * 255, b * 255 ];
+}
+
+// When the page loads provide the user with a random Arxiv title
+window.onload = function() {
+    readfileautomatically();    
+};
+
 </script>
 
 </body>

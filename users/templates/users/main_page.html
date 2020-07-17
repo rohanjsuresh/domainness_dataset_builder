@@ -129,7 +129,7 @@
   <hr></hr>
   <h3>Select Keyword/Keyphrases: </h3>
   <div style="padding-bottom: 2%" id="button_generate"></div>
-  <h3 id="display_user_selection"></h3>
+  <h3 id="display_user_selection" style="color: #cfc8c8;"></h3>
 </div>
 
 <!-- le butt -->
@@ -138,23 +138,29 @@
   <!-- selection only enabled when logged in -->
   {% if user.is_authenticated %}
   <button type="button" class="btn btn-primary" style="font-size: 30px;">Computer Science</button>
-  <button type="button" class="btn btn-secondary" style="font-size: 30px;">Physics</button>
-  <button type="button" class="btn btn-success" style="font-size: 30px;">Mathematics</button>
-  <button type="button" class="btn btn-danger" style="font-size: 30px;">Biology</button>
-  <button type="button" class="btn btn-warning" style="font-size: 30px;">Chemistry</button>
-  <button type="button" class="btn btn-info" style="font-size: 30px;">History</button>
+  <button type="button" class="btn btn-secondary" style="font-size: 30px;">Mathematics</button>
+  <button type="button" class="btn btn-secondary" style="font-size: 30px;">Mathematical Finance</button>
+  <button type="button" class="btn btn-success" style="font-size: 30px;">Physics</button>
+  <button type="button" class="btn btn-success" style="font-size: 30px;">Astronomy</button>
+  <button type="button" class="btn btn-warning" style="font-size: 30px;">Electrical Engineering</button>
+  <button type="button" class="btn btn-warning" style="font-size: 30px;">Quantitative Biology</button>
+  <button type="button" class="btn btn-info" style="font-size: 30px;">Statistics</button>
+  <button type="button" class="btn btn-info" style="font-size: 30px;">Economics</button>
   <button type="button" class="btn btn-dark" style="font-size: 30px;">Stop Words</button>
   <button type="button" class="btn btn-dark" style="font-size: 30px;">Other</button>
   {% else %}
   <h4>You must login to submit responses</h4>
-  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Computer Science</button>
-  <button type="button" class="btn btn-secondary" style="font-size: 30px;" disabled aria-disabled="true">Physics</button>
-  <button type="button" class="btn btn-success" style="font-size: 30px;" disabled aria-disabled="true">Mathematics</button>
-  <button type="button" class="btn btn-danger" style="font-size: 30px;" disabled aria-disabled="true">Biology</button>
-  <button type="button" class="btn btn-warning" style="font-size: 30px;" disabled aria-disabled="true">Chemistry</button>
-  <button type="button" class="btn btn-info" style="font-size: 30px;" disabled aria-disabled="true">History</button>
-  <button type="button" class="btn btn-dark" style="font-size: 30px;" disabled aria-disabled="true">Stop Words</button>
-  <button type="button" class="btn btn-dark" style="font-size: 30px;" disabled aria-disabled="true">Other</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;">Computer Science</button>
+  <button type="button" class="btn btn-secondary" style="font-size: 30px;">Mathematics</button>
+  <button type="button" class="btn btn-secondary" style="font-size: 30px;">Mathematical Finance</button>
+  <button type="button" class="btn btn-success" style="font-size: 30px;">Physics</button>
+  <button type="button" class="btn btn-success" style="font-size: 30px;">Astronomy</button>
+  <button type="button" class="btn btn-warning" style="font-size: 30px;">Electrical Engineering</button>
+  <button type="button" class="btn btn-warning" style="font-size: 30px;">Quantitative Biology</button>
+  <button type="button" class="btn btn-info" style="font-size: 30px;">Statistics</button>
+  <button type="button" class="btn btn-info" style="font-size: 30px;">Economics</button>
+  <button type="button" class="btn btn-dark" style="font-size: 30px;">Stop Words</button>
+  <button type="button" class="btn btn-dark" style="font-size: 30px;">Other</button>
   {% endif %}
 </div>
 <hr>

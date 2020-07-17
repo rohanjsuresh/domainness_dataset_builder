@@ -1,0 +1,30 @@
+<div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+    <h3>Select Domain For Selected Keyword/Phrase:</h3>
+    <!-- selection only enabled when logged in -->
+    {% if user.is_authenticated %}
+    <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="cs_but" onclick=click_radio_button(this)>Computer Science</button>
+    <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="math_but" onclick=click_radio_button(this)>Mathematics</button>
+    <!-- <button type="button" class="btn btn-secondary" style="font-size: 30px;">Mathematical Finance</button> -->
+    <button type="button" class="btn btn-secondary selection" style="font-size: 30px;" id="physics_but" onclick=click_radio_button(this)>Physics</button>
+    <button type="button" class="btn btn-secondary selection" style="font-size: 30px;" id="astro_but" onclick=click_radio_button(this)>Astronomy</button>
+    <button type="button" class="btn btn-warning selection" style="font-size: 30px;" id="ee_but" onclick=click_radio_button(this)>Electrical Engineering</button>
+    <button type="button" class="btn btn-warning selection" style="font-size: 30px;" id="qbio_but" onclick=click_radio_button(this)>Quantitative Biology</button>
+    <button type="button" class="btn btn-info selection" style="font-size: 30px;" id="stat_but" onclick=click_radio_button(this)>Statistics</button>
+    <button type="button" class="btn btn-info selection" style="font-size: 30px;" id="econ_but" onclick=click_radio_button(this)>Economics</button>
+    <!-- <button type="button" class="btn btn-dark" style="font-size: 30px;">Stop Words</button> -->
+    <button type="button" class="btn btn-dark selection" style="font-size: 30px;" id="other_but" onclick=click_radio_button(this)>Other</button>
+    {% else %}
+    <h4>You must login to submit responses</h4>
+    <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Computer Science</button>
+    <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">Mathematics</button>
+    <!-- <button type="button" class="btn btn-secondary" style="font-size: 30px;" disabled aria-disabled="true">Mathematical Finance</button> -->
+    <button type="button" class="btn btn-secondary" style="font-size: 30px;" disabled aria-disabled="true">Physics</button>
+    <button type="button" class="btn btn-secondary" style="font-size: 30px;" disabled aria-disabled="true">Astronomy</button>
+    <button type="button" class="btn btn-warning" style="font-size: 30px;" disabled aria-disabled="true">Electrical Engineering</button>
+    <button type="button" class="btn btn-warning" style="font-size: 30px;" disabled aria-disabled="true">Quantitative Biology</button>
+    <button type="button" class="btn btn-info" style="font-size: 30px;" disabled aria-disabled="true">Statistics</button>
+    <button type="button" class="btn btn-info" style="font-size: 30px;" disabled aria-disabled="true">Economics</button>
+    <!-- <button type="button" class="btn btn-dark" style="font-size: 30px;" disabled aria-disabled="true">Stop Words</button> -->
+    <button type="button" class="btn btn-dark" style="font-size: 30px;" disabled aria-disabled="true">Other</button>
+    {% endif %}
+  </div>
