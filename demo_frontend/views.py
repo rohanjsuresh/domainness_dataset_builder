@@ -1,11 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Keywords
+from .models import Keywords_Classified
+from .models import Arxiv_Titles_In_Circulation
+from .models import Arxiv_Titles_Classified
+from django.db import connection
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'demo_frontend/index.html')
+    title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
+    print(title)
+    return render(request, 'demo_frontend/index.html', {'title': title})
 
 def add_entry(request):
     print("Submitted")
@@ -29,6 +35,8 @@ def add_entry(request):
         else:
             values[input_ids[i]] = 0
 
+
+
     # print(values)
     
     # get keywords 
@@ -48,8 +56,13 @@ def add_entry(request):
         # get record associated with keyword
         update_record = Keywords.objects.get(keyword = keyword)
 
+        title = request.POST.get("title_input")
+        print("TITLE IS: " + title)
+        update_record2 = Arxiv_Titles_In_Circulation.objects.get(title = title)
+
         # increment times classified
         update_record.times_classified += 1
+        update_record2.times_classified += 1
 
         # update subject counts
         if values["cs_input"] > 0:
@@ -73,6 +86,26 @@ def add_entry(request):
             
 
         update_record.save()
+        update_record2.save()
 
         keyword = None
-    return render(request, 'demo_frontend/index.html')
+
+        # update titles in circulation
+        update_titles_in_circulation()
+
+    title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
+    return render(request, 'demo_frontend/index.html', {'title': title})
+
+# Updates tables so that only titles that have been classied
+# less than 2 times are in circulation
+# Runs this SQL query:
+#   INSERT INTO demo_frontend_arxiv_titles_classified(title, times_classified)
+#           SELECT title, times_classified
+#           FROM demo_frontend_arxiv_titles_in_circulation
+#           WHERE times_classified >= 2;
+#   DELETE FROM demo_frontend_arxiv_titles_in_circulation
+#           WHERE times_classified >= 2;
+def update_titles_in_circulation():
+    with connection.cursor() as cursor:
+        cursor.execute('INSERT INTO demo_frontend_arxiv_titles_classified(title, times_classified) SELECT title, times_classified FROM demo_frontend_arxiv_titles_in_circulation WHERE times_classified >= 2;')
+        cursor.execute('DELETE FROM demo_frontend_arxiv_titles_in_circulation WHERE times_classified >= 2;')

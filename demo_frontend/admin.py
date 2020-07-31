@@ -1,11 +1,17 @@
 from django.contrib import admin
 from .models import Keywords
+from .models import Keywords_Classified
+from .models import Arxiv_Titles_In_Circulation
+from .models import Arxiv_Titles_Classified
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
 from .models import UserExtension
 
 admin.site.register(Keywords)
+admin.site.register(Keywords_Classified)
+admin.site.register(Arxiv_Titles_In_Circulation)
+admin.site.register(Arxiv_Titles_Classified)
 
 # Define an inline admin descriptor for Employee model
 # which acts a bit like a singleton

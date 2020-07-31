@@ -130,7 +130,7 @@
 
 <!-- word and context -->
 <div class="card" style="width: 100%; text-align: center;">
-  <h1 style="font-size: 72px" id="wiki_title"><mark></mark></h1>
+  <h1 style="font-size: 72px" id="wiki_title">{{ title }}</h1>
   <hr></hr>
   <h3>Select Keyword/Keyphrases: </h3>
   <div style="padding-bottom: 2%" id="button_generate"></div>
@@ -141,6 +141,7 @@
 <form method="post" action="/add_entry/">
   {% csrf_token %}
   <input name="keyword_input" id="keyword_input" type="text" hidden>
+  <input name="title_input" id="title_input" type="text" hidden>
   <input name="cs_input" id="cs_input" type="radio" hidden>
   <input name="math_input" id="math_input" type="radio" hidden>
   <input name="physics_input" id="physics_input" type="radio" hidden>
@@ -183,11 +184,11 @@
 <hr>
 <div style="text-align: center; padding-bottom: 10px;">
   {% if user.is_authenticated %}
-  <button type="submit" class="btn btn-light" style="font-size: 30px;">Submit</button>
+  <input type="submit" class="btn btn-light" style="font-size: 30px;"></input>
   <button type="button" class="btn btn-light" style="font-size: 30px;" onClick=refresh_selection()>Generate new title</button>
   <!-- <a href="/add_entry/"><button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() >Submit</button></a> -->
   {% else %}
-  <button type="submit" class="btn btn-light" style="font-size: 30px;"disabled aria-disabled="true">Submit</button>
+  <input type="submit" class="btn btn-light" style="font-size: 30px;"disabled aria-disabled="true"></input>
   <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Generate new title</button>
   {% endif %}
 </div>
@@ -228,40 +229,40 @@
     function readfileautomatically () {
         // harcoded options
         // var txt = ["auto","break", "case", "char", "continue", "do", "default", "const", "double", "else", "enum", "extern", "for", "if", "goto", "float", "int", "long", "register", "return", "signed", "static", "sizeof", "short", "struct", "switch", "typedef", "union", "void", "while", "volatile", "unsigned", "1951 Bulgarian Cup", "Paris lace", "Naomi Tani", "Trichogypsia", "Kamoinge", "Bad Tabarz", "Peter Tannock", "Cherdynsky District", "Chantal Singer", "Judith S. Stern", "Sophie Trudeau (musician)", "Charles de Eendero", "Rhapsody No. 1 (Bartók)", "Thomas Percy (Pilgrimage of Grace)", "Home Economics Building (Torrance High School)", "Boophis albipunctatus", "Criminal Code of Belarus", "Iraq–Jordan relations", "Stone Brothers Racing", "Martigan Belt: An Adventure in the Asteroids", "St. Andrew's Basilica, Arthunkal", "1978 ABC Championship for Women", "Vu T. Thu Ha", "Emporia Formation", "Nellikunnu", "Peter Daka", "Rodrigo Faro", "Satonari", "Exo-CBX", "Vesyoly, Prokhorovsky District, Belgorod Oblast", "Thomas McKean Thompson McKennan", "Cool warehouse", "Goodbye Dear Wife", "City bus service no. 20 (Ljubljana)", "Leo Kurauzvione", "Izu stingray", "Conrad Davis Mock", "Bristol Jamia Mosque", "Osbert de Bayeux", "Magela hardyhead", "Robert Mermoud", "Greatness", "Heritage Guitars", "Brian Davis (American football)", "Liverpool Ramblers A.F.C.", "Pierre Cahuzac", "John de Graham", "Automata theory", "List of municipalities in Hakkari Province", "Broyles Award", "2012–13 Cowdenbeath F.C. season", "Deep map", "Megan Rice", "Tails Adventure", "Ephrata Municipal Airport", "FIS Freestyle World Ski Championships 2011 – Women's slopestyle", "George Beurling", "Daniel Pelosi", "The Homecoming of Odysseus (1922 film)", "SandHoke Early College", "Lilley, Hertfordshire", "Francis Augustus Cox", "1945 Montana Grizzlies football team", "César Zeoula", "TWR 70-000 series", "Ron Fountain", "HD 96660", "Poylu, Poylu", "Rashidabad, Tehran", "Discovery of human antiquity", "Letterbreen", "Richard Gwyn (Canadian writer)", "Walang Tulugan with the Master Showman", "Kamloops Water Aerodrome", "Mound Township, Effingham County, Illinois", "The Dragnet Solar Pons et al.", "Rakhee Sandilya", "Inter Press Service", "List of abductors of the human body", "Solliès-Pont", "Ganjikunta", "French Canadians", "First family of the United States", "Crabapple, Georgia", "RAF Joyce Green", "International Confederation of Revolver Enthusiasts", "1977 French Open – Mixed Doubles", "Norman Creek (Missouri)", "Elizabeth railway station"];
-        var txt = ["Transfer Fine-Tuning: A BERT Case Study", "Anharmonic oscillations of a conical buoy", "The tusk condition and Petrovski criterion for the normalized", "MALTS: Matching After Learning to Stretch"];
+        // var txt = ["Transfer Fine-Tuning: A BERT Case Study", "Anharmonic oscillations of a conical buoy", "The tusk condition and Petrovski criterion for the normalized", "MALTS: Matching After Learning to Stretch"];
 
-        // choose random index 
-        var random = getRandomInt(txt.length);
-        console.log(random);
+        // // choose random index 
+        // var random = getRandomInt(txt.length);
+        // console.log(random);
 
 
-        // display random keywords chosen in a large title
-        document.getElementById("wiki_title").innerHTML = txt[random];
+        // // display random keywords chosen in a large title
+        // document.getElementById("wiki_title").innerHTML = txt[random];
 
-        keyword_glob = txt[random];
-
+        keyword_glob = document.getElementById("wiki_title").innerHTML;
+        document.getElementById("title_input").value = document.getElementById("wiki_title").innerHTML;
         // use iframe to show wikipedia page as well
         // base url
         var wiki_url_start = "https://en.wikipedia.org/wiki/";
         // concatenate to create full url
-        var wiki_url_full = wiki_url_start.concat(txt[random]);
+        var wiki_url_full = wiki_url_start.concat(document.getElementById("wiki_title").innerHTML);
         document.getElementById("context_frame").src = wiki_url_full;
 
         // use google to allow user to do further research
         // base url
         var google_url_start = "https://www.google.com/search?q=";
         // replace spaces in keyword/phrase with %20
-        var google_query = txt[random].replace(' ', '%20');
+        var google_query = document.getElementById("wiki_title").innerHTML.replace(' ', '%20');
         // concatenate to create full url
         var google_url_full = google_url_start.concat(google_query);
         document.getElementById("context_google").href = google_url_full;
 
         // call function to create buttons
-        create_button_selection(txt[random]);
+        create_button_selection(document.getElementById("wiki_title").innerHTML);
 
         // logs for debugging
         console.log(wiki_url_full);
-        console.log(txt[random]);
+        console.log(document.getElementById("wiki_title").innerHTML);
 
     }
 

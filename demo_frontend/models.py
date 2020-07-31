@@ -15,6 +15,28 @@ class Keywords(models.Model):
     economics = models.IntegerField(default=0)
     other = models.IntegerField(default=0)
 
+class Keywords_Classified(models.Model):
+    keyword = models.CharField(max_length=512)
+    times_classified = models.IntegerField(default=0)
+    computer_science = models.IntegerField(default=0)
+    mathematics = models.IntegerField(default=0)   
+    physics = models.IntegerField(default=0)
+    astronomy = models.IntegerField(default=0)
+    electrical_engineering = models.IntegerField(default=0)
+    quantitative_biology = models.IntegerField(default=0)
+    statistics = models.IntegerField(default=0)
+    economics = models.IntegerField(default=0)
+    other = models.IntegerField(default=0)
+
+class Arxiv_Titles_In_Circulation(models.Model):
+    title = models.CharField(max_length=1024)
+    times_classified = models.IntegerField(default=0)
+
+class Arxiv_Titles_Classified(models.Model):
+    title = models.CharField(max_length=1024)
+    times_classified = models.IntegerField(default=0)
+
+
 def __str__(self):
     return self.word
 
