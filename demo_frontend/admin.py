@@ -3,6 +3,7 @@ from .models import Keywords
 from .models import Keywords_Classified
 from .models import Arxiv_Titles_In_Circulation
 from .models import Arxiv_Titles_Classified
+from .models import User_Billing
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
@@ -12,6 +13,7 @@ admin.site.register(Keywords)
 admin.site.register(Keywords_Classified)
 admin.site.register(Arxiv_Titles_In_Circulation)
 admin.site.register(Arxiv_Titles_Classified)
+admin.site.register(User_Billing)
 
 # Define an inline admin descriptor for Employee model
 # which acts a bit like a singleton

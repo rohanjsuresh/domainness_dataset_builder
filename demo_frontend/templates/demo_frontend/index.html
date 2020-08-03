@@ -137,9 +137,11 @@
   <h3 id="display_user_selection" style="color: #cfc8c8;"></h3>
 </div>
 
-<!-- le butt -->
+<p hidden id="grab_username">{{ user.username }}</p> 
+<!-- buttons -->
 <form method="post" action="/add_entry/">
   {% csrf_token %}
+  <input name="username" id="username" type="text" hidden>
   <input name="keyword_input" id="keyword_input" type="text" hidden>
   <input name="title_input" id="title_input" type="text" hidden>
   <input name="cs_input" id="cs_input" type="radio" hidden>
@@ -391,6 +393,7 @@ if (val == 0) {
 
   display_user_selection_func();
   document.getElementById("keyword_input").value = document.getElementById("display_user_selection").innerHTML;
+  document.getElementById("username").value = document.getElementById("grab_username").innerHTML;
 }
 
 // This function clicks the radio button corressponding to the correct radio button

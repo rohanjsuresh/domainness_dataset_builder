@@ -4,7 +4,9 @@ from .models import Keywords
 from .models import Keywords_Classified
 from .models import Arxiv_Titles_In_Circulation
 from .models import Arxiv_Titles_Classified
+from .models import User_Billing
 from django.db import connection
+from django.contrib.auth.models import User 
 
 # Create your views here.
 
@@ -15,6 +17,21 @@ def home(request):
 
 def add_entry(request):
     print("Submitted")
+
+    # increment number of articles classified by user
+    username = request.POST.get("username")
+    num_results = len(User_Billing.objects.filter(username = username))
+     # if no results insert new element into table
+    if num_results == 0:
+        new_record = User_Billing(username = username, email = User.objects.get(username=username).email, times_classified=1)
+        new_record.save()
+    # if records already exists, update it
+    else:
+        update_user= User_Billing.objects.get(username = username)
+        # increment times classified
+        update_user.times_classified += 1
+        update_user.save()
+
     # ids gettings retrieved from input
     input_ids = ["cs_input", 
                  "math_input",
