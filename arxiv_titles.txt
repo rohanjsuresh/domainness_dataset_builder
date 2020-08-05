@@ -1,479 +1,351 @@
-Opinion Particles: Classical Physics and Opinion Dynamics
-SandBlaster: Reversing the Apple Sandbox
-Comments are welcome
-Rapidity gaps and ancestry
-Evolutionary Biclustering of Clickstream Data
-Milking CowMask for Semi-Supervised Image Classification
-Memorization in Overparameterized Autoencoders
-Mathieu twining characters for K3
-Quizz: Targeted crowdsourcing with a billion (potential) users
-Light Sailboats: Laser driven autonomous microrobots
-Pruning a poset with veins
-RiPKI: The Tragic Story of RPKI Deployment in the Web Ecosystem
-The Rule of Global Necessitation
-LARP LHC 4.8 GHZ Schottky System Initial Commissioning with Beam
-The Academic Social Network
-Change Detection in Multivariate Datastreams: Likelihood and
-  Detectability Loss
-Spectral domain decomposition method for physically-based rendering of
-  Royaumont abbey
-Explainable Planning
-Discrete Folding
-Surface melting of methane and methane film on magnesium oxide
-Dodgson's Rule Approximations and Absurdity
-Prolonged Decoupling
-Stress-energy tensor of a radiating sphere inclosing black hole
-Should We Train Scientific Generalists?
-Keystone: An Open Framework for Architecting TEEs
-Cordial Deficiency
-Outlier Guided Optimization of Abdominal Segmentation
-Tommy Gold Revisited: Why Does Not The Universe Rotate?
-A liquid xenon ionization chamber in an all-fluoropolymer vessel
-FLAG: Lattice QCD Tests of the Standard Model and Foretaste for Beyond
-Magnetic monopole bibliography
-Proportional Rankings
-Innovative Science
-Foundation q-rules
-Understanding metropolitan patterns of daily encounters
-Calcul Moulien
-Targeted Undersmoothing
-State Amplification
-Mathematical Modelling of Tyndall Star Initiation
-Exceptional Indices
-Pricing and Referrals in Diffusion on Networks
-Hyperbolic Planes
-Brownian motors
-Ellipses Inscribed in Parallelograms
-Creating a tagset, lexicon and guesser for a French tagger
-Long baseline neutrino oscillations
-ABM of osteoblast's mechanotransduction pathway: time patterns of
-  critical events
-An exhaustive list of isotropic apocalyptic scenarios
-Investigation of multiple-dynein transport of melanosomes by
-  non-invasive force measurement using fluctuation unit $χ$
-Warping Peirce Quincuncial Panoramas
-Effects of Marine Protected Areas on Overfished Fishing Stocks with
-  Multiple Stable States
-An ostentatious model of cosmological scalar-tensor theory
-Hierarchical modelling of faecal egg counts to assess anthelmintic
-  efficacy
-Stress-Induced Intercalation Instability
-Differential Meadows
-Etude des effets non linéaires observés sur les oscillations d'un
-  pendule simple
-Trefoil Plumbing
-Adapting to heterogeneous comfort levels
-Causation & Physics
-A fuzzy based conceptual framework for career counselling
-Innocuous Implications of a Minimum Length in Quantum Gravity
-Cosmographic Degeneracy
-Orthodox Gravity
-Trisecting 4-manifolds
-Shake-Shake regularization
-Relativity Theory Refounded
-Constrained speaker linking
-Links between generalized Montréal-functors
-Smallest Squared Squares
-Ice-Creams and Wedge Graphs
-Polytopes with few vertices and few facets
-Modeling stochastic gene expression under repression
-Private Handshakes
-Camouflaged Supersymmetry
-Department Management System for Departments of Sri Lankan Universities
-Spoken Language Translation for Polish
-Brochette percolation
-Neutrino Counter Nuclear Weapon
-STEAM-Makerspace
-Ethnic Diversity Increases Scientific Impact
-Blended Learning or E-learning?
-Creating Capsule Wardrobes from Fashion Images
-On partita doppia
-Temporal Resolution of the RABBITT technique
-Thresholds and expectation thresholds
-Fashion Forward: Forecasting Visual Style in Fashion
-Albatross: An optimistic consensus algorithm
-Molecular mechanisms behind anti SARS-CoV-2 action of lactoferrin
-Dante, astrology and astronomy
-Network Dimensions in the Getty Provenance Index
-u^{c}d^{c}d^{c}-Based Affleck-Dine Baryogenesis
-Mechanical Properties of Growing Melanocytic Nevi and the Progression to
-  Melanoma
-Kramers' revenge
-The uncombed penumbra
-Exact S-matrices
-Personalized Search
-Clotho: An Audio Captioning Dataset
-A Snooze-less User-Aware Notification System for Proactive
-  Conversational Agents
-Rhythmos, Diathige, Trope
-Skyrmionic excitons
-Stochastic Collection and Replenishment (SCAR): Objective Functions
-Putting Lipstick on Pig: Enabling Database-style Workflow Provenance
-Physical model for vaporization
-Instantaneous response of the ionosphere to a sudden commencement of the
-  strong magnetic storm of April 6, 2000
-Chemotactic Maneuverability of Sperm
-Keynote Paper: Cell-Surface Adhesive Interactions in Microchannels and
-  Microvessels
-Extended counterpoint symmetries and continuous counterpoint
-Light-Front Dynamics and Light-Front QCD
-Applied Choreographies
-Fountain Uncorrectable Sets and Finite-Length Analysis
-DIF : Dataset of Perceived Intoxicated Faces for Drunk Person
-  Identification
-Ludendorff Coronal Flattening Index of the Total Solar Eclipse on March
-  9, 2016
-Viewport-Adaptive Navigable 360-Degree Video Delivery
-On the Importance of Interpretation in Quantum Physics. A Reply to Elise
-  Crull
-An Attack on Flexibility and Stoker's Problem
-Serial and Unserial Combinatorial Families
-Predicting Clinical Deterioration of Outpatients Using Multimodal Data
-  Collected by Wearables
-Prophet Secretary
-The tusk condition and Petrovski criterion for the normalized
-  $p\mspace{1mu}$-parabolic equation
-Convexity in Greek antiquity
-Force myography benchmark data for hand gesture recognition and transfer
-  learning
-Untrodden pathways in the theory of the restricted partition function
-  $p(n, N)$
-Hook Interpolations
-Dissonant Black Droplets and Black Funnels
-Avoiding Resentment Via Monotonic Fairness
-Woven Geometries: Black Holes
-Quaternion Rhapsody
-Quantifier Scope and Constituency
-Time Remains
-Minuet: A Scalable Distributed Multiversion B-Tree
-Cooperative Equilibrium: A solution predicting cooperative play
-Serial and Unserial Combinatorial Families
-SEREN - A new SPH code for star and planet formation simulations
-Warm Inflation
-Fabrication of nanotubules of thermoelectric gamma-Na0.7CoO2 using
-  porous aluminum oxide membrane as supporting template
-BBN For Pedestrians
-Editorial
-The PRIMPing Routine -- Tiling through Proximal Alternating Linearized
-  Minimization
-Self-reference Upfront: A Study of Self-referential Gödel Numberings
-Mantis: Predicting System Performance through Program Analysis and
-  Modeling
-Towards Anthropo-inspired Computational Systems: the $P^3$ Model
-A plethora of inertial products
-WG V Conveners' Report: Charm Inputs for CKM Physics
-Non-singular cloaks allow mimesis
-Universal spectrum for DNA base CG frequency distribution in Takifugu
-  rubripes (Puffer fish) genome
-Benchmarking ordering techniques for nonserial dynamic programming
-SKIFFS: Superconducting Kinetic Inductance Field-Frequency Sensors for
-  Sensitive Magnetometry in Moderate Background Magnetic Fields
-Using Barriers to Reduce the Sensitivity to Edge Miscalculations of
-  Casting-Based Object Projection Feature Estimation
-Disks surrounding Cataclysmic Binaries
-Smallest Squared Squares
-Concerning Dice and Divinity
-How Does the Antarctic Circumpolar Current Affect the Southern Ocean
-  Meridional Overturning Circulation?
-A Neuro-Fuzzy Method to Improving Backfiring Conversion Ratios
-What can biology bestow to quantum mechanics?
-The Liverpool-Edinburgh High Proper Motion Survey
-A Comprehensive Simulation Study of a Liquid-Xe Detector for Contraband
-  Detection
-Quantum mechanics emerging from "timeless" classical dynamics
-Relativity grupoid insted of relativity group
-Curriculum Dropout
-From known to undiscovered resonances
-Observations of fourteen pulsar glitches
-Resolving photon-shortage mystery in femtosecond magnetism
-Performance Localisation
-Lightening Global Types
-SiD Letter of Intent
-Universal test for Hippocratic randomness
-Dovetail: Stronger Anonymity in Next-Generation Internet Routing
-Do Incomplete GUT Multiplets Always Spoil Unification?
-Innovation networks
-Modeling truncated hemoglobin vibrational dynamics
-A note on the shameful conjecture
-Proposal Flow
-Multiple-Access Bosonic Communications
-Dispersal and dive patterns in gravid leatherback turtles during the
-  nesting season in French Guiana
-The California Molecular Cloud
-Waist and trunk of knots
-Toward Goal-Driven Neural Network Models for the Rodent
-  Whisker-Trigeminal System
-Jeans instability in the linearized Burnett regime
-Overhauling SC Atomics in C11 and OpenCL
-Preferential Root Tropism Induced by Structural Inhomogeneities in 2D
-  Wet Granular Media
-Amplified Fermion Production from Overpopulated Bose Fields
-Remarks on Frankl's conjecture
-Cosmology Solved?
-Buckling in Armored Droplets
-On keen Heegaard splittings
-Aire, périmètre et polygones cocycliques
-Automation Security
-Moduli-Induced Vacuum Destabilisation
-Polariton Spin Whirls
-Intra-pixel response characterization of a HgCdTe near infrared detector
-  with a pronounced crosshatch pattern
-Another proof of Scurry's characterization of a two weight norm
-  inequality for a sequence-valued positive dyadic operator
-Step by Step to Peace in Syria
-A debt behaviour model
-Mastering the Master Field
-Intercausal Reasoning with Uninstantiated Ancestor Nodes
-Inclination-Independent Galaxy Classification
-Emphasizing Expert Practice with Spaced Recall
-Facility Leasing with Penalties
-Evaluating environmental joint extremes for the offshore industry
-Counting Candy Crush Configurations
-Australian Aboriginal Astronomy: Overview
-Lesion Focused Super-Resolution
-Intelligence in Artificial Intelligence
-Electric charge in the stochastic electric field
-Latin Polytopes
-Retractable Contracts
-A Quantitative Study of Java Software Buildability
-Fractional Echoes
-Disks surrounding Cataclysmic Binaries
-Collaborative Receptive Field Learning
-Multi-instrumental observations of the 2014 Ursid meteor outburst
-Cosmological bootstrap
-Vehicles as sensors: high-accuracy rainfall maps from windshield wiper
-  measurements
-Individual rules for trail pattern formation in Argentine ants
-  (Linepithema humile)
-Automatic vocal tract landmark localization from midsagittal MRI data
-Cellular Automata: Wolfram's Metaphors for Complex Systems
-Blockchain-based TLS Notary Service
-Unseparated pairs and fixed points in random permutations
-Bright and Vivid Diffractive-Plasmonic Structural Colors
-Concealment by uniform motion
-Rapture in the Cartesian Wall between Real World Entities and their
-  Abstract Models
-Alexander polynomial of sextics
-Information Extraction in Illicit Domains
-Grabbing water
-Silicon microneedles array with biodegradable tips for transdermal drug
-  delivery
-The quadruple system HIP 45734
-Interacting singletons
-Dissonant Black Droplets and Black Funnels
-Hasard et déterminisme chez Laplace
-Credit contagion and credit risk
-Pose for Action - Action for Pose
-Free Lunch
-All-atom simulations reveal how single point mutations promote serpin
-  misfolding
-Federated Forest
-Data-driven research on chemical features of Jingdezhen and Longquan
-  celadon by energy dispersive X-ray fluorescence
-A Conversation with Martin Bradbury Wilk
-All-carbon multi-electrode array for real-time in vitro measurements of
-  oxidizable neurotransmitters
-Preference Queries
-On the cascade rollback synchronization
-SiD Letter of Intent
-Whispering gallery microsensors: a review
-Well Behaved Transition Systems
-Stratified Picard--Lefschetz theory
-Proceedings Fifteenth Conference on Theoretical Aspects of Rationality
-  and Knowledge
-Two-Buyer Sequential Multiunit Auctions with No Overbidding
-Continuous input nonlocal games
-Rediscovery Datasets: Connecting Duplicate Reports
-Physical unknowables
-A note on obstinate tachyons in classical dS solutions
-Histological and Histochemical Studies on the Esophagus, Stomach and
-  Small Intestines of Vara-nus niloticus
-The COBRAS/SAMBA CMB Project
-Reading Stockholm Riots 2013 in social media by text-mining
-Interaction effects in multi-subband quantum wires
-Meridional surfaces and (1,1)-knots
-Hill's formula
-Huddling behavior in emperor penguins : dynamics of huddling
-The poset of posets
-Measuring Mountains on the Moon
-Biochemical mechanism of resistance in some Brassica genotypes against
-  Lipaphis erysimi (Kaltenbach) (Homoptera: Aphididae)
-Exposing the Noncollectivity in Elliptic Flow
-Do Incomplete GUT Multiplets Always Spoil Unification?
-BGP Stability is Precarious
-Bakry-Emery meet Villani
-Last Branching in Directed Last Passage Percolation
-"The 2009 Apparition of Methuselah Comet 107P/Wilson-Harrington: A Case
-  of Comet Rejuvenation?"
-Swarming of Self-Propelled Camphor Boats
+Paperclip at $θ=π$
+Prehistoric sanctuaries in Daunia
+Polylingual Wordnet
+Nonlinear Craig Interpolant Generation
+Localizing Volatilities
+Luminosities of Barred and Unbarred S0 Galaxies
+Gaussian Fading is the Worst Fading
+Phylogenomics with Paralogs
+Creating kinks from particles
+Arrays and the octahedron recurrence
+Configuration-Space Flipper Planning for Rescue Robots
+False loss of coherence
+Removing Singularities
+Wild hypersurfaces
+In memoriam Maurice Gross
+Practical Bijective S-box Design
+Active region upflows: 1. Multi-instrument observations
+Waiter-Client and Client-Waiter planarity, colorability and minor games
+Model based functional clustering of varved lake sediments
+Quantum graphs where back-scattering is prohibited
+Gauss-Bonnet dark energy
+Isolated States
+Modeling a Maunder Minimum
+Solid Propellants
+Conjure Documentation, Release 2.3.0
+The holomorphic couch theorem
+LASSi: Metric based I/O analytics for HPC
+Rummaging through Earth's attic for remains of ancient life
+Can quantum systems succumb to their own (gravitational) attraction?
+Marching in squares
+Project Lyman
+Science Prospects for SPI
+CROSSBOW: Scaling Deep Learning with Small Batch Sizes on Multi-GPU Servers
+The Weak Outnumbering the Mighty: Normal Galaxies in Deep Chandra Surveys
+BritGravII - The Second British Gravity Meeting
+Collective Chaos
+Error-tolerant Tree Matching
 Conformal Technicolor
-All pairs suffice
-BRST Detour Quantization
-Most vital segment barriers
-Degrees of concealment and bindingness in quantum bit commitment
-  protocols
-Eine Bemerkung über positiv definite quadratische Formen und rationale
-  Punkte
-Large ordinals
-Coupled Quintessence
-EuSpRIG 2006 Commercial Spreadsheet Review
-Dandelion: Redesigning the Bitcoin Network for Anonymity
-Overcharging higher curvature black holes
-The Star of David Rule
-Relativizing relativity
-Liver lesion segmentation informed by joint liver segmentation
-The Census Taker's Hat
-Antifouling membranes for oily wastewater treatment: interplay between
-  wetting and membrane fouling
-Singularities of meager composants and filament composants
-Linguistic Paradoxes and Tautologies
-Air resistance
-Integrative Windowing
-Prospect for Heavy Quarks Lighter than $M_W$
-Stealth Scalar Field Overflying a 2+1 Black Hole
-Heterotic Orbifolds
-Toroidal Crystals
-Ligand-Receptor Interactions
-Classes logarithmiques et capitulation
-Towards plant wires
-Jayant Vishnu Narlikar
-Form Connections
-Moire Butterflies
-Representative dynamics
-Abrasion of flat rotating shapes
-Superconductivity in Fluorine-Arsenide Sr_{1-x}La_xFeAsF
-Statistical model of evolution of brain parcellation
-SOLOIST: Few-shot Task-Oriented Dialog with A Single Pre-trained
-  Auto-regressive Model
-Cosmic Concordance
-The Mass Distribution of White Dwarfs: An Unwavering Obsession
-Ideal Gas Stephani Universes
-RAID: A Relation-Augmented Image Descriptor
-Turbulent luminance in impassioned van Gogh paintings
-Speeding up Entanglement Degradation
-"Borrowing Arrows with Thatched Boats": The Art of Defeating Reactive
-  Jammers in IoT Networks
-LOTIS, Super-LOTIS, SDSS and Tautenburg Observations of GRB 010921
-Controllable matter-wave switchers with vector Bose-Einstein solitons
-A quantitative definition of organismality and its application to lichen
-Dancing links
-Universality of beamsplitters
-The CARESSES EU-Japan project: making assistive robots culturally
-  competent
-Decentralised LTL Monitoring
-Disentangling instrumental broadening
-Efficiently decoding strings from their shingles
-Alliance free and alliance cover sets
-W\lowercase{eyl} \lowercase {bound for $p$-power twist of} $GL(2)$
-  L-\lowercase{functions }
-Occupancy fraction, fractional colouring, and triangle fraction
-A Cross-cultural Corpus of Annotated Verbal and Nonverbal Behaviors in
-  Receptionist Encounters
-Redes sociales, participación ciudadana y la hipótesis del
-  slacktivismo: lecciones del caso de "El Bronco" / Social Media, Civic
-  Engagement, and the Slacktivism Hypothesis: Lessons from Mexico's "El Bronco"
-LHC / ILC / Cosmology Interplay
-Hong-Ou-Mandel Interference
-A generalization of Noel-Reed-Wu Theorem to signed graphs
-The G-ACM Tool: using the Drools Rule Engine for Access Control
-  Management
-Spreadsheets in Clinical Medicine
-Experimental Tests of Spirituality
-Regular, pseudo-regular, and almost regular matrices
-Effect of Hydration and Ammonization on the Thermal Expansion Behaviour
-  of ZrW2O8: Ab-initio Lattice Dynamical Perspective
-Blenders
-Gregarious vs Individualistic Behavior in Vicsek Swarms and the Onset of
-  First-Order Phase Transitions
-Stewart-Lyth Inverse Problem
-BAFFLE : Blockchain Based Aggregator Free Federated Learning
-Triggering the formation of direct collapse black holes by their
-  congeners
-Do Incomplete GUT Multiplets Always Spoil Unification?
-Universal Dependencies Parsing for Colloquial Singaporean English
-Refurbished GOLDMine
-The Ghost length, levels and shriek maps on classifying spaces
-Granular Computing: An Augmented Scheme of Degranulation Through a
-  Modified Partition Matrix
-De Morgan classifying toposes
-Breaking symmetry, breaking ground
-A "Rip Van Winkle Hypothesis" to Resolve the Realism-Antirealism Debate
-Abdus Salam: A Reappraisal. Part II Salam's Part in the Pakistani
-  Nuclear Weapon Programme
-A Concerted Variational Strategy for Investigating Rare Events
-Hierarchical Unambiguity
-A Story of Two Streams: Reinforcement Learning Models from Human
-  Behavior and Neuropsychiatry
-Dehydration, Dissolution and Melting of Cyclodextrin Crystals
-The sinusoid and the phasor
-Factorize Factorization
-The Snowball Stratosphere
-Aristotle, projectiles and guns
-Dynamic all scores matrices for LCS score
-Compatible and Almost Compatible Pseudo-Riemannian Metrics
-Holistically-Attracted Wireframe Parsing
-Compositionality for Quantitative Specifications
-Exploring the legacy of big stargazing events
-Bell-shaped nonstationary refinable ripplets
-Untying molecular friction knots
-Alarm-Based Prescriptive Process Monitoring
-u^{c}d^{c}d^{c}-Based Affleck-Dine Baryogenesis
-Breaking symmetry, breaking ground
-Inaccurate use of asymptotic formulas
-Regional Clock Tree Generation by Abutment in Synchoros VLSI Design
-Cumulants as non-Gaussian qualifiers
-The Wage Premium of Communist Party Membership: Evidence from China
-Bells, Motels and Permutation Groups
-Systems involving surfactants
-The sinusoid and the phasor
-Big Neural Networks Waste Capacity
-Optimised Maintenance of Datalog Materialisations
-Optimal design of three-planetary-gear power-split hybrid powertrains
-Universal Dependencies Parsing for Colloquial Singaporean English
-Monorepos: A Multivocal Literature Review
-Defrosting the Big Freeze quantum mechanically?
-Repartitioning of the ComplexWebQuestions Dataset
-A Comparison of Online Automatic Speech Recognition Systems and the
-  Nonverbal Responses to Unintelligible Speech
-Practical Integer Overflow Prevention
-The tusk condition and Petrovski criterion for the normalized
-  $p\mspace{1mu}$-parabolic equation
-Thermodynamically Consistent Coarse Graining of Biocatalysts beyond
-  Michaelis--Menten
-Introducing an old calculating instrument in a new technologies
-  environment: a praxeological analysis of students' tasks using different
-  registers
-A Comparison of Online Automatic Speech Recognition Systems and the
-  Nonverbal Responses to Unintelligible Speech
-Numbers
-Whispering Vortices
-Concepts of Phenomenological Irreversible Quantum Thermodynamics I:
-  Closed Undecomposed Schottky Systems in Semi-classical Description
-Simple Wriggling is Hard unless You Are a Fat Hippo
-Universal Dependencies Parsing for Colloquial Singaporean English
-Effect of support on the vanadyl oxygen abstraction in supported vanadia
+Crystal field of rare earth impurities in LaF$_3$
+Teasing bits of information out of the CMB energy spectrum
+Dissipation production in a closed two-level quantum system as a test of the obversibility of the dynamics
+The Hurst Exponent of Fermi GRBs
+Projective configuration theorems: old wine into new wineskins
+Vibrational ratchets
+How Fabulous Is Fab 5 Cosmology?
+Unbraiding the braided tensor product
+What is Gab? A Bastion of Free Speech or an Alt-Right Echo Chamber?
+Uploading Brain into Computer: Whom to Upload First?
+The G305 star-forming complex: the central star clusters Danks 1 and Danks 2
+The MiMeS Project: First Results
+Tuning Monte Carlo Generators: The Perugia Tunes
+Experimental evidence that electrical fatigue failure obeys a generalized Coffin-Manson law
+Hat Puzzles
+Efficient Code for Relativistic Quantum Summoning
+Minimizing Shortfall
+Jewels on a wall ring
+`Iconoclastic', Categorical Quantum Gravity
+Forest Garrote
+Microstructure of neat alcohols
+Loewner Chains
+Conditions for the Trivers-Willard hypothesis to be valid: A minimal population-genetic model
+Interaction of (-)-epigallocatechin gallate with silver nanoparticles
+Pattern Kits
+The Residence History Inference Problem
+Domestic Axion
+A fuzzy based conceptual framework for career counselling
+Network-Based Prediction of the 2019-nCoV Epidemic Outbreak in the Chinese Province Hubei
+Potholes on the Royal Road
+Some Unsettled Questions in the Problem of Neutrino Oscillations
+Serverless inferencing on Kubernetes
+Delayed Recombination
+Anisotropic superconducting properties of aligned MgB2 crystallites
+Two-View Matching with View Synthesis Revisited
+The Peacock Encryption Method
+Specht Polytopes and Specht Matroids
+Thermal Emission in the Southwest Clump of VY CMa
+The recension of the Kepler laws in England
+Dust in active nuclei. II. Powder or gravel?
+Analysis of Bacteriostatic Effect of Chinese Herbal Medicine Against E.coli
+Modeling stochastic gene expression under repression
+Relativistic Localizing Processes Bespeak an Inevitable Projective Geometry of Spacetime
+Effects of Lombard Reflex on the Performance of Deep-Learning-Based Audio-Visual Speech Enhancement Systems
+KVA: Capital Valuation Adjustment
+Elliptically Symmetric Lenses and Violation of Burke's Theorem
+Phase behavior of C18 monoglyceride in hydrophobic solutions
+Fluid fragmentation from hospital toilets
+Non-Resonant Thermal Admittance Spectroscopy
+The Problem Of Grue Isn't
+OPUC on One Foot
+Absolute specific heat measurements of a microgram Pb crystal using ac nanocalorimetry
+Cluster-induced deagglomeration in dilute gravity-driven gas-solid flows of cohesive grains
+What can biology bestow to quantum mechanics?
+Really Straight Graph Drawings
+Consequences of Unhappiness While Developing Software
+Teach Network Science to Teenagers
+Transferring Symmetry
+Wolfenstein Parametrization Re-examined
+Solvable Chaos
+Existence of three-phase interlines on a cerium dioxide surface
+Enforcing Bulk Mail Classification
+CABaRet: Leveraging Recommendation Systems for Mobile Edge Caching
+CommuniSense: Crowdsourcing Road Hazards in Nairobi
+Evangelism in Social Networks: Algorithms and Complexity
+Trends in Topological Combinatorics
+BBN For Pedestrians
+The perils of thresholding
+SERENADE: A Parallel Randomized Algorithm Suite for Crossbar Scheduling in Input-Queued Switches
+Static M-horizons
+Stau-catalyzed Nuclear Fusion
+Periodic Oscillations of Blood Cell Populations in Chronic Myelogenous Leukemia
+Geometry and Destiny
+Inlaid ReS2 Quantum Dots in Monolayer MoS2
+Abandon Statistical Significance
+Mechanism of magnetic field effect in cryptochrome
+Assessment of a percutaneous iliosacral screw insertion simulator
+Exchanging Goods Using Valuable Money
+The Vaccinee's Dilemma: Individual-level Decisions, Self- Organization & Influenza Epidemics
+Unsmoothed Particle Hydrodynamics
+Correlations in commodity markets
+A closed-form solution to the risk-taking motivation of subordinated debtholders
+Experimental quantum randomness generation invulnerable to the detection loophole
+Axino Mass
+Isolated States
+Felix Klein's "Uber die Integralform der Erhaltungssätze und die Theorie der räumlich-geschlossenen Welt": an English translation
+Perfect antireflection via negative refraction
+The SCUBA Legacy Catalogue: Continuum Objects Detected by SCUBA
+GRB Remnants
+Fixed points of zircon automorphisms
+Antithetic variates in higher dimensions
+Frustration effects in antiferromagnetic molecules: the cuboctahedron
+Graphene oxide and adsorption of chloroform: a density functional study
+Purification Complexity without Purifications
+Decoding Superposed LoRa Signals
 Vanishing Vanishing Cycles
-Lachesis: Automated Generation of Persistent Partitionings for Big Data
-  Applications
-DeepBach: a Steerable Model for Bach Chorales Generation
-Dynamical nonextensivity or nonextensive dynamics?
-Changing a semantics: opportunism or courage?
-Destabilization
-Adversarial Training Can Hurt Generalization
-What's in a name?
-The Historical Supernovae
-Polyhedral vesicles
-Transonic instabilities in accretion disks
-Polysemous codes
-Locality
-Valuation Bound of Tranche Options
+A Unified Enumeration of 1-dimension Garden Algebras and Valise Adinkras
+LT Code Design for Inactivation Decoding
+Square Trisection
+An open mapping theorem for finitely copresented Esakia spaces
+Diffusion on Ruffled Membrane Surfaces
+Latitude migration of solar filaments
+Fixation in Fluctuating Populations
+Saturated absorption at nanowatt power levels using metastable xenon in a high-finesse optical cavity
+Detecting Race Conditions in Parallel Programs that Use Semaphores
+The Effects of Nuclear Terrorism: Fizzles
+Quantifying the Bull's Eye Effect
+Late Bloomer Galaxies: Growing Up in Cosmic Autumn
+Not Available
+NeurOpt: Neural network based optimization for building energy management and climate control
+Optimized Treatment Schedules for Chronic Myeloid Leukemia
+Automatic convexity
+Flipping surfaces
+Wigner Surmise For Domain Systems
+Hinted Networks
+Fabrication of Metal Nanowires
+The First Heroic Decade of Microlensing
+Large ordinals
+Irrational centers
+Distributions of H2O and CO2 ices on Ariel, Umbriel, Titania, and Oberon from IRTF/SpeX observations
+On ekpyrotic brane collisions
+Fully Distrustful Quantum Cryptography
+Why Bother With Syntax?
+Muon capture on Chlorine-35
+Diversity and Adjudication
+SAFFRON: A Semi-Automated Framework for Software Requirements Prioritization
+On the statistics of wind gusts
+Fingerprint Recognition Using Minutia Score Matching
+Quantum Transfiguration of Kruskal Black Holes
+Alchemist: An Apache Spark <=> MPI Interface
+Brewing moonshine for Mathieu
+Colorful Image Colorization
+Proceedings of the Eighteenth Conference on Uncertainty in Artificial Intelligence (2002)
+On the Treatment of Neutrino Oscillations Without Resort to Weak Eigenstates
+The role of PSL(2,7) in M-theory: M2-branes, Englert equation and the septuples
+Dynamics of Sleep-Wake Transitions During Sleep
+The Graviton Tail almost Completely Wags the Dog
+A correction of the historiographical record on the probability integral
+Centering in Italian
+Aim Low, Shoot High: Evading Aimbot Detectors by Mimicking User Behavior
+Very Low Mass Stellar and Substellar Companions to Solar-Like Stars From MARVELS V: A Low Eccentricity Brown Dwarf from the Driest Part of the Desert, MARVELS-6b
+Torsional potentials of glyoxal, oxalyl halides and their thiocarbonyl derivatives: Challenges for DFT
+Verbalizing Ontologies in Controlled Baltic Languages
+LVD highlights
+Building a Model Astrolabe
+Nakedness and curvature strength of shell-focusing singularity in the spherically symmetric space-time with vanishing radial pressure
+La théorie des jeux pour l'établissement des contrats dans les réseaux interdomaines
+On colorability of knots by rotations, Torus knot and PL trochoid
+On the behaviour of a rumour process with random stifling
+How Galaxies Don't Form
+Reply to Wang's comment
+On the Carmichael rings, Carmichael ideals and Carmichael polynomials
+Some addenda on distance function wavelets
+Ultrasound Modulated Bioluminescence Tomography
+Detection of incompatible properties
+Soft Pneumatic Gelatin Actuator for Edible Robotics
+Feature allocations, probability functions, and paintboxes
+Pose for Action - Action for Pose
+Social Success of Perfumes
+Rigorous estimates for the relegation algorithm
+Marginal Likelihood Computation via Arrogance Sampling
+Multiscale Resolution of Shortwave-Longwave Interaction
+Sarah
 Lesion Focused Super-Resolution
-The Proof of Innocence
-Caracterización de galaxias elípticas en contexto cosmológico
-Refining Understanding of Corporate Failure through a Topological Data
-  Analysis Mapping of Altman's Z-Score Model
-Visualizing septins in early Drosophila embryos
-Modelling Food Webs
-Driving Force in Investment
-Jetting to dripping transition: critical aspect ratio in step
-  emulsifiers
+The Repeated Solicitation Model
+Hominid evolution: genetics versus memetics
+Counting Candy Crush Configurations
+Allegation of scientific misconduct increases Twitter attention
+Computer Network Topology Design in Limelight of Pascal Graph Property
+To rescue a star
+Generating Generalized $G_{D-2}$ solutions
+Variational Principles in Fang Uniform Spaces
+Dynamic Switch-Controller Association and Control Devolution for SDN Systems
+Mathematical Education
+MIMO Transmission with Residual Transmit-RF Impairments
+The Erdős-Hajnal Conjecture for Paths and Antipaths
+Fastest Distributed Consensus on Petal Networks
+John Ellard Gore: of immensity and minuteness
+LARP LHC 4.8 GHZ Schottky System Initial Commissioning with Beam
+A Dirty Holographic Superconductor
+Cosmology Solved?
+Royal Society Inaugural Article Perspective: Multiferroics Beyond Electric-Field Control of Magnetism
+Mutual Search
+Guruswami-Sinop Rounding without Higher Level Lasserre
+Non-Resonant Thermal Admittance Spectroscopy
+Nonequivalent ensembles and metastability
+A Chain of Winking (Oscillating) Filaments Triggered by an Invisible Extreme-Ultraviolet Wave
+Imitation Games
+Monotone expansion
+Magnetars: fact or fiction?
+Ubiquity of Kostka polynomials
+Orthogonal AMP
+Rayleigh Matroids
+u^{c}d^{c}d^{c}-Based Affleck-Dine Baryogenesis
+Expounding on physics -- A phenomenographic study of physicists talking of their physics
+Tunable frequency-stabilization of UV laser using a Hallow-Cathode Lamp of atomic thallium
+Tempered transitions between thimbles
+(Un)informed Consent: Studying GDPR Consent Notices in the Field
+Homeostatic Fluctuations of a Tissue Surface
+Hypotrochoids in conformal restriction systems and Virasoro descendants
+Gaussian Fading is the Worst Fading
+Models for Chronology Selection
+Causality re-established
+Unidentified EGRET Sources
+Search for methylamine in high mass hot cores
+ANTARES: the first undersea neutrino telescope
+Non-clairvoyant Scheduling Games
+Resource heterogeneity leads to unjust effort distribution in climate change mitigation
+A fuzzy based conceptual framework for career counselling
+Percolation since Saint-Flour
+Real-time Decolorization using Dominant Colors
+Liquid acrobatics
+Probability in the Everett World: Comments on Wallace and Greaves
+Learning Models from Data with Measurement Error: Tackling Underreporting
+Orientals
+Latin Polytopes
+Humpty Dumpty: Controlling Word Meanings via Corpus Poisoning
+Abnormality of the placental vasculature affects placental thickness
+SAD effects on grantsmanship
+Most vital segment barriers
+Physiological modeling of isoprene dynamics in exhaled breath
+Telling apart <I>Felidae</I> and <I>Ursidae</I> from the distribution of nucleotides in mitochondrial DNA
+OnionBots: Subverting Privacy Infrastructure for Cyber Attacks
+Raking the Cocktail Party
+Are Constants Constant?
+Partial Convolution based Padding
+"Haunted" quantum contextuality
+The Internet's unexploited path diversity
+Threshhold Singularities and the Magnetic Mass in Hot QCD
+Measuring measurement
+Nonmetallic Gasket and Miniature Plastic Turnbuckle Diamond Anvil Cell for Pulsed Magnetic Field Studies at Cryogenic Temperatures
+Unburied Higgs
+Kidnapping Model: An Extension of Selten's Game
+Quantum Optical Metrology -- The Lowdown on High-N00N States
+When Watchdog Meets Coding
+Web Engineering
+Triggering BTeV
+Deep Learning the Indus Script
+Sprouts game on compact surfaces
+Multiple-Access Bosonic Communications
+Lick Northern Proper Motion Program. III. Lick NPM2 Catalog
+Collective Chaos
+A Location-based Approach for Distributed Kiosk Design
+Inclination-Independent Galaxy Classification
+Empirical Discovery in Linguistics
+Ice-Creams and Wedge Graphs
+Hypergeometric Connotations of Quantum Equations
+TrAp: a Tree Approach for Fingerprinting Subclonal Tumor Composition
+Classified Ads Harvesting Agent and Notification System
+Extended counterpoint symmetries and continuous counterpoint
+Quantum Transformations
+Is Faith The Enemy Of Science?
+Frequency Spirals
+Disappointment in Social Choice Protocols
+Energy, incessant obsolescence, and the first interstellar missions
+Blended Mastery Learning in Mathematics
+Interplay of Quantum Criticality and Geometric Frustration in Columbite
+Electron hydrodynamics dilemma: whirlpools or no whirlpools
+Misura del ritardo accumulato dalla rotazione terrestre, DUT1, alla meridiana clementina della Basilica di Santa Maria degli Angeli in Roma
+Why Your IT Project Might Be Riskier Than You Think
+WaLDORf: Wasteless Language-model Distillation On Reading-comprehension
+Automatic Acrostic Couplet Generation with Three-Stage Neural Network Pipelines
+Stacked Josephson junction SQUID
+The "Fodor"-FODOR fallacy bites back
+Kara: A System for Visualising and Visual Editing of Interpretations for Answer-Set Programs
+Time Symmetry in Microphysics
+Can Inflation be Falsified?
+Multimodal Interfaces for Effective Teleoperation
+KVA: Capital Valuation Adjustment
+Approaches to Modeling Insurgency
+Salvaging 1/R gravity models
+Relative contributions of Shakespeare and Fletcher in Henry VIII: An Analysis Based on Most Frequent Words and Most Frequent Rhythmic Patterns
+Protective Measurements
+Hamiltonian Relaxation
+Simple Wriggling is Hard unless You Are a Fat Hippo
+CONATION: English Command Input/Output System for Computers
+Swiveled Rényi entropies
+A Comparison of Online Automatic Speech Recognition Systems and the Nonverbal Responses to Unintelligible Speech
+Unstable Blowups
+Rumble: Data Independence for Large Messy Data Sets
+Modules homotopiques (Homotopy modules)
+Area Attention
+Dynamic Batch Bayesian Optimization
+The Distance to Pleiades
+Twilled Lie-Rinehart algebras and differential Batalin-Vilkovisky algebras
+Electricity Theft Detection using Machine Learning
+Star Forming Regions in Cepheus
+Algorithmic expedients for the S-labeling problem
+Insular microbiogeography
+Huddling behavior in emperor penguins : dynamics of huddling
+The Gift Exchange Problem
+Gotta Learn Fast: A New Benchmark for Generalization in RL
+On static chiral Milton-Briane-Willis continuum mechanics
+PatchFCN for Intracranial Hemorrhage Detection
+Bonferroni-based gatekeeping procedure with retesting option
+Vegetation Pattern Formation in Drylands
+Anderson's considerations on the flow of superfluid helium: some offshoots
+Automatic Compositor Attribution in the First Folio of Shakespeare
+Nonlinear atom interferometer surpasses classical precision limit
+The Kato-Ponce Inequality
+Non-clairvoyant Scheduling Games
+Nudging the particle filter
+Inscribing cubes and covering by rhombic dodecahedra via equivariant topology
+RNA topology remolds electrostatic stabilization of viruses
+Econophysics of precious stones
+Trade-offs drive resource specialization and the gradual establishment of ecotypes
+A radiação de corpo negro e o surgimento da física quântica: Notas de aula
+Invisible Trojan-horse attack
+The Effects of Nuclear Terrorism: Fizzles
+Modelling butterfly wing eyespot patterns
+Mapping Moderate Redshift Cluster
+RaSE: Random Subspace Ensemble Classification
+SHEEP: the ASCA 5-10 keV survey
