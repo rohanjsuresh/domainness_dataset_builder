@@ -1,0 +1,335 @@
+nohup: ignoring input
+Watching for file changes with StatReloader
+[04/Aug/2020 02:56:11] "GET / HTTP/1.1" 200 20527
+[04/Aug/2020 02:56:12] "GET / HTTP/1.1" 200 20493
+[04/Aug/2020 02:56:13] "GET / HTTP/1.1" 200 20542
+[04/Aug/2020 02:56:14] "GET / HTTP/1.1" 200 20493
+[04/Aug/2020 02:56:14] "GET / HTTP/1.1" 200 20508
+[04/Aug/2020 02:56:15] "GET / HTTP/1.1" 200 20517
+[04/Aug/2020 02:59:06] "GET /login/ HTTP/1.1" 200 5041
+[04/Aug/2020 03:00:57] "GET / HTTP/1.1" 200 20600
+[04/Aug/2020 03:00:58] "GET / HTTP/1.1" 200 20615
+[04/Aug/2020 03:02:22] "GET / HTTP/1.1" 200 20605
+[04/Aug/2020 03:02:23] "GET / HTTP/1.1" 200 20619
+[04/Aug/2020 03:02:53] "GET / HTTP/1.1" 200 20608
+[04/Aug/2020 03:03:41] "GET / HTTP/1.1" 200 20622
+[04/Aug/2020 03:03:54] "GET / HTTP/1.1" 200 20601
+[05/Aug/2020 03:15:01] "GET / HTTP/1.1" 200 20598
+[05/Aug/2020 03:15:03] "GET /login/ HTTP/1.1" 200 5041
+[05/Aug/2020 03:15:09] "POST /login/ HTTP/1.1" 302 0
+[05/Aug/2020 03:15:09] "GET / HTTP/1.1" 200 20798
+[05/Aug/2020 03:15:15] "GET /admin HTTP/1.1" 301 0
+[05/Aug/2020 03:15:15] "GET /admin/ HTTP/1.1" 200 5884
+[05/Aug/2020 03:15:15] "GET /static/admin/css/responsive.css HTTP/1.1" 200 18052
+[05/Aug/2020 03:15:15] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[05/Aug/2020 03:15:15] "GET /static/admin/css/base.css HTTP/1.1" 200 16378
+[05/Aug/2020 03:15:15] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[05/Aug/2020 03:15:15] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[05/Aug/2020 03:15:15] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[05/Aug/2020 03:15:16] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[05/Aug/2020 03:15:16] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[05/Aug/2020 03:15:16] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[05/Aug/2020 03:15:20] "GET /admin/demo_frontend/arxiv_titles_in_circulation/ HTTP/1.1" 200 18993
+[05/Aug/2020 03:15:20] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Aug/2020 03:15:20] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6190
+[05/Aug/2020 03:15:20] "GET /static/admin/js/core.js HTTP/1.1" 200 5723
+[05/Aug/2020 03:15:20] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918
+[05/Aug/2020 03:15:20] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[05/Aug/2020 03:15:20] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8941
+[05/Aug/2020 03:15:20] "GET /static/admin/js/actions.js HTTP/1.1" 200 6766
+[05/Aug/2020 03:15:20] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[05/Aug/2020 03:15:20] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[05/Aug/2020 03:15:20] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[05/Aug/2020 03:15:20] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[05/Aug/2020 03:15:21] "GET /admin/demo_frontend/arxiv_titles_in_circulation/52/change/ HTTP/1.1" 200 5047
+[05/Aug/2020 03:15:21] "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[05/Aug/2020 03:15:21] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[05/Aug/2020 03:15:21] "GET /static/admin/css/forms.css HTTP/1.1" 200 8518
+[05/Aug/2020 03:15:21] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Aug/2020 03:15:21] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10322
+[05/Aug/2020 03:15:24] "GET /admin/demo_frontend/arxiv_titles_in_circulation/ HTTP/1.1" 200 18993
+[05/Aug/2020 03:15:28] "POST /admin/demo_frontend/arxiv_titles_in_circulation/ HTTP/1.1" 200 14861
+[05/Aug/2020 03:15:28] "GET /static/admin/js/cancel.js HTTP/1.1" 200 409
+[05/Aug/2020 03:15:33] "POST /admin/demo_frontend/arxiv_titles_in_circulation/ HTTP/1.1" 302 0
+[05/Aug/2020 03:15:33] "GET /admin/demo_frontend/arxiv_titles_in_circulation/ HTTP/1.1" 200 3510
+[05/Aug/2020 03:15:33] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Aug/2020 03:15:33] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[05/Aug/2020 03:15:39] "GET /admin/demo_frontend/ HTTP/1.1" 200 4633
+[05/Aug/2020 03:15:45] "GET /admin/ HTTP/1.1" 200 8898
+[05/Aug/2020 03:15:45] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/rohanjs2/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohanjs2/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohanjs2/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohanjs2/django_dataset_builder/domainness_dataset_builder/demo_frontend/views.py", line 14, in home
+    title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
+AttributeError: 'NoneType' object has no attribute 'title'
+[05/Aug/2020 03:15:51] "GET / HTTP/1.1" 500 73088
+[05/Aug/2020 03:19:50] "GET / HTTP/1.1" 200 20789
+[05/Aug/2020 03:19:53] "GET /admin/ HTTP/1.1" 200 8898
+[05/Aug/2020 03:19:57] "GET /admin/demo_frontend/arxiv_titles_in_circulation/ HTTP/1.1" 200 33300
+[05/Aug/2020 03:19:57] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Aug/2020 03:20:02] "GET /admin/ HTTP/1.1" 200 8898
+[05/Aug/2020 03:22:00] "GET / HTTP/1.1" 200 20824
+[05/Aug/2020 03:22:03] "GET /logout/ HTTP/1.1" 200 3346
+[05/Aug/2020 03:22:05] "GET / HTTP/1.1" 200 20613
+[05/Aug/2020 03:24:19] "GET /login/ HTTP/1.1" 200 5041
+[05/Aug/2020 03:25:28] "GET /register/ HTTP/1.1" 200 6197
+[05/Aug/2020 03:26:39] "GET /login/ HTTP/1.1" 200 5041
+[05/Aug/2020 03:27:01] "POST /login/ HTTP/1.1" 302 0
+[05/Aug/2020 03:27:01] "GET / HTTP/1.1" 200 20852
+[05/Aug/2020 22:47:15] "GET / HTTP/1.1" 200 20824
+[07/Aug/2020 22:03:38] "GET / HTTP/1.1" 200 20791
+[07/Aug/2020 22:03:43] "GET / HTTP/1.1" 200 20775
+[07/Aug/2020 22:03:44] "GET /admin HTTP/1.1" 301 0
+[07/Aug/2020 22:03:44] "GET /admin/ HTTP/1.1" 200 8898
+[07/Aug/2020 22:03:44] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[07/Aug/2020 22:03:44] "GET /static/admin/css/responsive.css HTTP/1.1" 200 18052
+[07/Aug/2020 22:03:44] "GET /static/admin/css/base.css HTTP/1.1" 200 16378
+[07/Aug/2020 22:03:44] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[07/Aug/2020 22:03:45] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[07/Aug/2020 22:03:45] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[07/Aug/2020 22:03:45] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[07/Aug/2020 22:03:45] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[07/Aug/2020 22:03:45] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[07/Aug/2020 22:03:45] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[07/Aug/2020 22:03:48] "GET /admin/auth/user/ HTTP/1.1" 200 6621
+[07/Aug/2020 22:03:48] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6190
+[07/Aug/2020 22:03:48] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[07/Aug/2020 22:03:48] "GET /static/admin/js/core.js HTTP/1.1" 200 5723
+[07/Aug/2020 22:03:48] "GET /static/admin/js/actions.js HTTP/1.1" 200 6766
+[07/Aug/2020 22:03:48] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8941
+[07/Aug/2020 22:03:48] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[07/Aug/2020 22:03:48] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918
+[07/Aug/2020 22:03:48] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[07/Aug/2020 22:03:48] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[07/Aug/2020 22:03:48] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[07/Aug/2020 22:03:48] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[07/Aug/2020 22:03:48] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[07/Aug/2020 22:03:48] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[07/Aug/2020 22:03:48] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[07/Aug/2020 22:04:43] "GET /logout/ HTTP/1.1" 200 3346
+[07/Aug/2020 22:04:46] "GET /login/ HTTP/1.1" 200 5041
+[07/Aug/2020 22:04:48] "GET /register/ HTTP/1.1" 200 6197
+[07/Aug/2020 22:05:06] "POST /register/ HTTP/1.1" 302 0
+[07/Aug/2020 22:05:06] "GET / HTTP/1.1" 200 20765
+[07/Aug/2020 22:05:12] "GET /login/ HTTP/1.1" 200 5041
+[07/Aug/2020 22:05:16] "POST /login/ HTTP/1.1" 302 0
+[07/Aug/2020 22:05:16] "GET / HTTP/1.1" 200 20785
+[07/Aug/2020 22:05:24] "GET / HTTP/1.1" 200 20802
+[07/Aug/2020 22:05:31] "GET / HTTP/1.1" 200 20753
+[07/Aug/2020 22:05:47] "POST /add_entry/ HTTP/1.1" 200 20770
+[07/Aug/2020 22:05:53] "POST /add_entry/ HTTP/1.1" 200 20821
+[07/Aug/2020 22:06:07] "POST /add_entry/ HTTP/1.1" 200 20840
+[07/Aug/2020 22:06:23] "GET /logout/ HTTP/1.1" 200 3346
+[07/Aug/2020 22:06:25] "GET /login/ HTTP/1.1" 200 5041
+[07/Aug/2020 22:06:28] "POST /login/ HTTP/1.1" 302 0
+[07/Aug/2020 22:06:28] "GET / HTTP/1.1" 200 20806
+[07/Aug/2020 22:06:33] "GET /admin/auth/user/ HTTP/1.1" 200 7044
+[07/Aug/2020 22:06:33] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[07/Aug/2020 22:06:33] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[07/Aug/2020 22:06:36] "GET /admin/auth/user/2/change/ HTTP/1.1" 200 19161
+[07/Aug/2020 22:06:36] "GET /static/admin/css/forms.css HTTP/1.1" 200 8518
+[07/Aug/2020 22:06:36] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[07/Aug/2020 22:06:36] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10322
+[07/Aug/2020 22:06:36] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20232
+[07/Aug/2020 22:06:36] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12318
+[07/Aug/2020 22:06:36] "GET /static/admin/js/calendar.js HTTP/1.1" 200 7777
+[07/Aug/2020 22:06:36] "GET /static/admin/js/inlines.js HTTP/1.1" 200 13773
+[07/Aug/2020 22:06:36] "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 5753
+[07/Aug/2020 22:06:36] "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[07/Aug/2020 22:06:36] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[07/Aug/2020 22:06:36] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+[07/Aug/2020 22:06:36] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+[07/Aug/2020 22:06:36] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[07/Aug/2020 22:06:36] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+[07/Aug/2020 22:06:36] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[07/Aug/2020 22:06:38] "GET /admin/auth/user/ HTTP/1.1" 200 7044
+[07/Aug/2020 22:06:39] "GET /admin/ HTTP/1.1" 200 8898
+[07/Aug/2020 22:06:41] "GET /admin/demo_frontend/user_billing/ HTTP/1.1" 200 4452
+[07/Aug/2020 22:06:41] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[07/Aug/2020 22:06:43] "GET /admin/demo_frontend/user_billing/1/change/ HTTP/1.1" 200 5363
+[07/Aug/2020 22:06:43] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[07/Aug/2020 22:06:46] "GET /admin/demo_frontend/user_billing/ HTTP/1.1" 200 4452
+[07/Aug/2020 22:06:47] "GET /admin/ HTTP/1.1" 200 8898
+[07/Aug/2020 22:37:29] "GET /logout/ HTTP/1.1" 200 3346
+[07/Aug/2020 22:37:31] "GET /login/ HTTP/1.1" 200 5041
+[07/Aug/2020 22:37:42] "GET / HTTP/1.1" 200 20604
+[07/Aug/2020 22:37:47] "GET /login/ HTTP/1.1" 200 5041
+[07/Aug/2020 22:37:50] "GET /register/ HTTP/1.1" 200 6197
+[07/Aug/2020 22:37:51] "GET /login/ HTTP/1.1" 200 5041
+[07/Aug/2020 22:38:03] "GET /register/ HTTP/1.1" 200 6197
+[07/Aug/2020 22:38:18] "POST /register/ HTTP/1.1" 302 0
+[07/Aug/2020 22:38:18] "GET / HTTP/1.1" 200 20748
+[07/Aug/2020 22:38:22] "GET /login/ HTTP/1.1" 200 5041
+[07/Aug/2020 22:38:25] "POST /login/ HTTP/1.1" 302 0
+[07/Aug/2020 22:38:25] "GET / HTTP/1.1" 200 20777
+[07/Aug/2020 22:39:11] "POST /add_entry/ HTTP/1.1" 200 20774
+[07/Aug/2020 22:39:24] "POST /add_entry/ HTTP/1.1" 200 20772
+[07/Aug/2020 22:41:58] "POST /add_entry/ HTTP/1.1" 200 20782
+Internal Server Error: /add_entry/
+Traceback (most recent call last):
+  File "/home/rohanjs2/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/rohanjs2/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/rohanjs2/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rohanjs2/django_dataset_builder/domainness_dataset_builder/demo_frontend/views.py", line 78, in add_entry
+    update_record2 = Arxiv_Titles_In_Circulation.objects.get(title = title)
+  File "/home/rohanjs2/.local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/rohanjs2/.local/lib/python3.6/site-packages/django/db/models/query.py", line 417, in get
+    self.model._meta.object_name
+demo_frontend.models.Arxiv_Titles_In_Circulation.DoesNotExist: Arxiv_Titles_In_Circulation matching query does not exist.
+[07/Aug/2020 22:42:01] "POST /add_entry/ HTTP/1.1" 500 87692
+[07/Aug/2020 22:42:09] "GET / HTTP/1.1" 200 20762
+[07/Aug/2020 22:42:11] "GET / HTTP/1.1" 200 20796
+[07/Aug/2020 22:45:16] "GET /admin/demo_frontend/user_billing/ HTTP/1.1" 302 0
+[07/Aug/2020 22:45:16] "GET /admin/login/?next=/admin/demo_frontend/user_billing/ HTTP/1.1" 200 2119
+[07/Aug/2020 22:45:16] "GET /static/admin/css/login.css HTTP/1.1" 200 1233
+[07/Aug/2020 22:45:23] "POST /admin/login/?next=/admin/demo_frontend/user_billing/ HTTP/1.1" 302 0
+[07/Aug/2020 22:45:23] "GET /admin/demo_frontend/user_billing/ HTTP/1.1" 200 4702
+[07/Aug/2020 22:45:23] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[07/Aug/2020 22:45:25] "GET /admin/demo_frontend/user_billing/2/change/ HTTP/1.1" 200 5364
+[07/Aug/2020 22:45:25] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[09/Aug/2020 22:36:26] "GET / HTTP/1.1" 200 20779
+Not Found: /favicon.ico
+[09/Aug/2020 22:36:27] "GET /favicon.ico HTTP/1.1" 404 2833
+[09/Aug/2020 22:36:28] "GET / HTTP/1.1" 200 20761
+[09/Aug/2020 22:36:49] "GET / HTTP/1.1" 200 20795
+[09/Aug/2020 22:36:52] "GET /admin HTTP/1.1" 301 0
+[09/Aug/2020 22:36:52] "GET /admin/ HTTP/1.1" 200 8898
+[09/Aug/2020 22:36:52] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[09/Aug/2020 22:36:52] "GET /static/admin/css/responsive.css HTTP/1.1" 200 18052
+[09/Aug/2020 22:36:52] "GET /static/admin/css/base.css HTTP/1.1" 200 16378
+[09/Aug/2020 22:36:52] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[09/Aug/2020 22:36:52] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[09/Aug/2020 22:36:52] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[09/Aug/2020 22:36:52] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[09/Aug/2020 22:36:52] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[09/Aug/2020 22:36:52] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[09/Aug/2020 22:36:52] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[09/Aug/2020 22:36:55] "GET /admin/auth/user/ HTTP/1.1" 200 7467
+[09/Aug/2020 22:36:55] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6190
+[09/Aug/2020 22:36:55] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[09/Aug/2020 22:36:55] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[09/Aug/2020 22:36:55] "GET /static/admin/js/core.js HTTP/1.1" 200 5723
+[09/Aug/2020 22:36:55] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918
+[09/Aug/2020 22:36:55] "GET /static/admin/js/actions.js HTTP/1.1" 200 6766
+[09/Aug/2020 22:36:55] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8941
+[09/Aug/2020 22:36:55] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[09/Aug/2020 22:36:55] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[09/Aug/2020 22:36:55] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[09/Aug/2020 22:36:55] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[09/Aug/2020 22:36:55] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[09/Aug/2020 22:36:55] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[09/Aug/2020 22:36:55] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[09/Aug/2020 22:36:55] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[09/Aug/2020 22:36:58] "GET /admin/ HTTP/1.1" 200 8898
+[09/Aug/2020 22:37:19] "GET /logout/ HTTP/1.1" 200 3346
+[09/Aug/2020 22:37:20] "GET /login/ HTTP/1.1" 200 5041
+[09/Aug/2020 22:37:21] "GET /register/ HTTP/1.1" 200 6197
+[09/Aug/2020 22:37:36] "GET /admin/auth/user/ HTTP/1.1" 302 0
+[09/Aug/2020 22:37:36] "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 1933
+[09/Aug/2020 22:37:36] "GET /static/admin/css/login.css HTTP/1.1" 200 1233
+[09/Aug/2020 22:37:40] "POST /admin/login/?next=/admin/auth/user/ HTTP/1.1" 302 0
+[09/Aug/2020 22:37:40] "GET /admin/auth/user/ HTTP/1.1" 200 7467
+[09/Aug/2020 22:37:40] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[09/Aug/2020 22:37:44] "GET /admin/ HTTP/1.1" 200 8898
+[09/Aug/2020 22:37:49] "GET /admin/demo_frontend/keywords_classified/ HTTP/1.1" 200 3296
+[09/Aug/2020 22:37:49] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[09/Aug/2020 22:37:50] "GET /admin/ HTTP/1.1" 200 8898
+[09/Aug/2020 22:37:52] "GET /admin/demo_frontend/arxiv_titles_classified/ HTTP/1.1" 200 4580
+[09/Aug/2020 22:37:52] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[09/Aug/2020 22:37:54] "GET /admin/ HTTP/1.1" 200 8898
+[09/Aug/2020 22:38:06] "GET / HTTP/1.1" 200 20793
+[10/Aug/2020 19:41:51] "GET / HTTP/1.1" 200 20599
+Not Found: /favicon.ico
+[10/Aug/2020 19:41:52] "GET /favicon.ico HTTP/1.1" 404 2833
+[10/Aug/2020 19:43:24] "GET / HTTP/1.1" 200 20614
+[10/Aug/2020 19:43:25] "GET / HTTP/1.1" 200 20629
+[10/Aug/2020 19:43:31] "GET /login/ HTTP/1.1" 200 5041
+[10/Aug/2020 19:43:35] "GET /register/ HTTP/1.1" 200 6197
+[10/Aug/2020 21:04:48] "GET / HTTP/1.1" 200 20629
+Not Found: /favicon.ico
+[10/Aug/2020 21:04:49] "GET /favicon.ico HTTP/1.1" 404 2833
+[10/Aug/2020 21:05:48] "GET / HTTP/1.1" 200 20584
+Not Found: /favicon.ico
+[10/Aug/2020 21:05:49] "GET /favicon.ico HTTP/1.1" 404 2833
+[18/Aug/2020 15:44:45] "GET / HTTP/1.1" 200 20772
+Not Found: /favicon.ico
+[18/Aug/2020 15:44:50] "GET /favicon.ico HTTP/1.1" 404 2833
+/home/rohanjs2/django_dataset_builder/domainness_dataset_builder/domainness_dataset_builder/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 04, 2020 - 02:56:01
+Django version 3.0.8, using settings 'domainness_dataset_builder.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Keystone: An Open Framework for Architecting TEEs
+critical events
+LARP LHC 4.8 GHZ Schottky System Initial Commissioning with Beam
+Royaumont abbey
+Magnetic monopole bibliography
+Should We Train Scientific Generalists?
+Understanding metropolitan patterns of daily encounters
+ABM of osteoblast's mechanotransduction pathway: time patterns of
+Pricing and Referrals in Diffusion on Networks
+Investigation of multiple-dynein transport of melanosomes by
+Dodgson's Rule Approximations and Absurdity
+Opinion Particles: Classical Physics and Opinion Dynamics
+Long baseline neutrino oscillations
+The Rule of Global Necessitation
+An exhaustive list of isotropic apocalyptic scenarios
+Dust in active nuclei. II. Powder or gravel?
+Periodic Oscillations of Blood Cell Populations in Chronic Myelogenous Leukemia
+Fastest Distributed Consensus on Petal Networks
+Effects of Lombard Reflex on the Performance of Deep-Learning-Based Audio-Visual Speech Enhancement Systems
+Anderson's considerations on the flow of superfluid helium: some offshoots
+PatchFCN for Intracranial Hemorrhage Detection
+Ubiquity of Kostka polynomials
+SHEEP: the ASCA 5-10 keV survey
+The "Fodor"-FODOR fallacy bites back
+Existence of three-phase interlines on a cerium dioxide surface
+Domestic Axion
+Submitted
+axion 
+Submitted
+axion 
+TITLE IS: Domestic Axion
+Submitted
+ecotypes 
+Humpty Dumpty: Controlling Word Meanings via Corpus Poisoning
+Quantifying the Bull's Eye Effect
+Forest Garrote
+Quantifying the Bull's Eye Effect
+Submitted
+bull's eye effect 
+Submitted
+bull's eye effect 
+TITLE IS: Quantifying the Bull's Eye Effect
+Submitted
+bull's eye effect 
+TITLE IS: Quantifying the Bull's Eye Effect
+Submitted
+bull's eye effect 
+TITLE IS: Quantifying the Bull's Eye Effect
+False loss of coherence
+On static chiral Milton-Briane-Willis continuum mechanics
+Empirical Discovery in Linguistics
+Collective Chaos
+Alchemist: An Apache Spark <=> MPI Interface
+Hypergeometric Connotations of Quantum Equations
+Wigner Surmise For Domain Systems
+`Iconoclastic', Categorical Quantum Gravity
+Allegation of scientific misconduct increases Twitter attention
+The SCUBA Legacy Catalogue: Continuum Objects Detected by SCUBA
+Monotone expansion
+Muon capture on Chlorine-35
+Watching for file changes with StatReloader

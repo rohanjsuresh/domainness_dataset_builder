@@ -25,7 +25,7 @@ SECRET_KEY = '!t3!4t(o@z25agmgp2zz+d%^wb3h(_g+m1q&qc3=nv3iw(d5!v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['owl.cs.illinois.edu', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'domainness_dataset_builder',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'USER': 'root',
+        'USER': '',
         'PASSWORD': '',
     }
 }
