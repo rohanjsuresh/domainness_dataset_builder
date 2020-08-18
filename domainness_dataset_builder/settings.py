@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'domainness_dataset_builder',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'USER': '',
+        'USER': 'root',
         'PASSWORD': '',
     }
 }
