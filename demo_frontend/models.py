@@ -30,11 +30,19 @@ class Arxiv_Titles_In_Circulation(models.Model):
     title = models.CharField(max_length=1024)
     subject = models.CharField(max_length=512)
     times_classified = models.IntegerField(default=0)
+    times_skipped = models.IntegerField(default=0)
 
 class Arxiv_Titles_Classified(models.Model):
     title = models.CharField(max_length=1024)
     subject = models.CharField(max_length=512)
     times_classified = models.IntegerField(default=0)
+    times_skipped = models.IntegerField(default=0)
+
+class Arxiv_Titles_Skipped(models.Model):
+    title = models.CharField(max_length=1024)
+    subject = models.CharField(max_length=512)
+    times_classified = models.IntegerField(default=0)
+    times_skipped = models.IntegerField(default=0)
 
 
 def __str__(self):

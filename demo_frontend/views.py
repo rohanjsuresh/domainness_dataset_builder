@@ -113,16 +113,45 @@ def add_entry(request):
     title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
     return render(request, 'demo_frontend/index.html', {'title': title})
 
+# if user skips increment total skips for that title
+def skip_entry(request):
+    print("Skipped")
+    title = request.POST.get("title_input")
+    print(title)
+
+    update_record = Arxiv_Titles_In_Circulation.objects.get(title = title)
+    # increment times classified
+    update_record.times_skipped += 1
+    update_record.save()
+
+    # update titles in circulation
+    update_titles_in_circulation()
+
+    new_title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
+    return render(request, 'demo_frontend/index.html', {'title': new_title})
+
+    
+
 # Updates tables so that only titles that have been classied
-# less than 2 times are in circulation
+# less than 2 times are in circulation and titles that have been
+# skipped 5 times 
 # Runs this SQL query:
-#   INSERT INTO demo_frontend_arxiv_titles_classified(title, times_classified)
-#           SELECT title, times_classified
-#           FROM demo_frontend_arxiv_titles_in_circulation
+# INSERT INTO demo_frontend_arxiv_titles_classified(title, times_classified, subject, times_skipped) 
+#           SELECT title, times_classified, subject, times_skipped 
+#           FROM demo_frontend_arxiv_titles_in_circulation 
 #           WHERE times_classified >= 2;
 #   DELETE FROM demo_frontend_arxiv_titles_in_circulation
 #           WHERE times_classified >= 2;
+# INSERT INTO demo_frontend_arxiv_titles_skipped(title, times_classified, subject, times_skipped) 
+#           SELECT title, times_classified, subject, times_skipped 
+#           FROM demo_frontend_arxiv_titles_in_circulation 
+#           WHERE times_skipped >= 5;
+#   DELETE FROM demo_frontend_arxiv_titles_in_circulation
+#           WHERE times_skipped >= 5;
 def update_titles_in_circulation():
     with connection.cursor() as cursor:
-        cursor.execute('INSERT INTO demo_frontend_arxiv_titles_classified(title, times_classified) SELECT title, times_classified FROM demo_frontend_arxiv_titles_in_circulation WHERE times_classified >= 2;')
+        cursor.execute('INSERT INTO demo_frontend_arxiv_titles_classified(title, times_classified, subject, times_skipped) SELECT title, times_classified, subject, times_skipped FROM demo_frontend_arxiv_titles_in_circulation WHERE times_classified >= 2;')
         cursor.execute('DELETE FROM demo_frontend_arxiv_titles_in_circulation WHERE times_classified >= 2;')
+        cursor.execute('INSERT INTO demo_frontend_arxiv_titles_skipped(title, times_classified, subject, times_skipped) SELECT title, times_classified, subject, times_skipped FROM demo_frontend_arxiv_titles_in_circulation WHERE times_skipped >= 5;')
+        cursor.execute('DELETE FROM demo_frontend_arxiv_titles_in_circulation WHERE times_skipped >= 5;')
+

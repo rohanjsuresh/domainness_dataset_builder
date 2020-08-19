@@ -188,15 +188,25 @@
 <hr>
 <div style="text-align: center; padding-bottom: 10px;">
   {% if user.is_authenticated %}
-  <input type="submit" class="btn btn-light" style="font-size: 30px;"></input>
-  <button type="button" class="btn btn-light" style="font-size: 30px;" onClick=refresh_selection()>Generate new title</button>
+  <input type="submit" class="btn btn-light" style="font-size: 30px;" value="Submit This Keyword"></input>
   <!-- <a href="/add_entry/"><button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() >Submit</button></a> -->
   {% else %}
-  <input type="submit" class="btn btn-light" style="font-size: 30px;"disabled aria-disabled="true"></input>
-  <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Generate new title</button>
+  <input type="submit" class="btn btn-light" style="font-size: 30px;"disabled aria-disabled="true" value="Submit This Title"></input>
   {% endif %}
 </div>
 </form>
+
+<div style="text-align: center; padding-bottom: 10px;">
+  {% if user.is_authenticated %}
+  <form method="post" action="/skip_entry/">
+    {% csrf_token %}
+    <input name="title_input" id="title_input2" type="text" hidden>
+    <input type="submit" class="btn btn-light" style="font-size: 30px;" value="Skip This Title" onClick=refresh_selection()></input>
+  </form>
+  {% else %}
+  <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Skip This Title</button>
+  {% endif %}
+</div>
 
 <!-- context -->
 <div class="card" style="width: 100%; text-align: center;">
@@ -245,6 +255,7 @@
 
         keyword_glob = document.getElementById("wiki_title").innerHTML;
         document.getElementById("title_input").value = document.getElementById("wiki_title").innerHTML;
+        document.getElementById("title_input2").value = document.getElementById("wiki_title").innerHTML;
         // use iframe to show wikipedia page as well
         // base url
         var wiki_url_start = "https://en.wikipedia.org/wiki/";
