@@ -52,7 +52,8 @@ class UserExtension(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     num_done = models.IntegerField()
 
-class User_Billing(models.Model):
+class User_Extended(models.Model):
     username = models.CharField(max_length=512)
     email = models.CharField(max_length=512)
     times_classified = models.IntegerField()
+    subject = models.CharField(max_length=512)

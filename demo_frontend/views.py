@@ -4,7 +4,7 @@ from .models import Keywords
 from .models import Keywords_Classified
 from .models import Arxiv_Titles_In_Circulation
 from .models import Arxiv_Titles_Classified
-from .models import User_Billing
+from .models import User_Extended
 from django.db import connection
 from django.contrib.auth.models import User 
 
@@ -20,23 +20,22 @@ def add_entry(request):
 
     # increment number of articles classified by user
     username = request.POST.get("username")
-    num_results = len(User_Billing.objects.filter(username = username))
-     # if no results insert new element into table
-    if num_results == 0:
-        new_record = User_Billing(username = username, email = User.objects.get(username=username).email, times_classified=1)
-        new_record.save()
-    # if records already exists, update it
-    else:
-        update_user= User_Billing.objects.get(username = username)
-        # increment times classified
-        update_user.times_classified += 1
-        update_user.save()
+    # num_results = len(User_Extended.objects.filter(username = username))
+    #  # if no results insert new element into table
+    # if num_results == 0:
+    #     new_record = User_Extended(username = username, email = User.objects.get(username=username).email, times_classified=1)
+    #     new_record.save()
+    # # if records already exists, update it
+    # else:
+    update_user= User_Extended.objects.get(username = username)
+    # increment times classified
+    update_user.times_classified += 1
+    update_user.save()
 
     # ids gettings retrieved from input
     input_ids = ["cs_input", 
                  "math_input",
                  "physics_input",
-                 "astro_input",
                  "ee_input",
                  "qbio_input",
                  "stat_input",
@@ -155,3 +154,11 @@ def update_titles_in_circulation():
         cursor.execute('INSERT INTO demo_frontend_arxiv_titles_skipped(title, times_classified, subject, times_skipped) SELECT title, times_classified, subject, times_skipped FROM demo_frontend_arxiv_titles_in_circulation WHERE times_skipped >= 5;')
         cursor.execute('DELETE FROM demo_frontend_arxiv_titles_in_circulation WHERE times_skipped >= 5;')
 
+
+# keep track of user's field of study and the number of papers they have classified
+def add_user(request):
+    username = request.POST.get("my_username")
+    email = request.POST.get("my_email")
+    subject = request.POST.get("subject")
+    new_record = User_Extended(username = username, email = email, times_classified=1, subject=subject)
+    new_record.save()
