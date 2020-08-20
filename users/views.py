@@ -19,7 +19,7 @@ def register(request):
             username = request.POST.get("my_username")
             email = request.POST.get("my_email")
             subject = request.POST.get("subject")
-            new_record = User_Extended(username = username, email = email, times_classified=1, subject=subject)
+            new_record = User_Extended(username = username, email = email, times_classified=0, subject=subject)
             new_record.save()
             # #############################
             login(request, new_user)
