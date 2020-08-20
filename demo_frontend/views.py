@@ -17,26 +17,26 @@ redirected_once = False
 def home(request):
     username = request.user
     if request.user.is_authenticated:
-        print("Logged in")
+        # print("Logged in")
         title = get_title_by_user_subject(username)
-        print(title)
+        # print(title)
         times_classified = get_number_classified_by_user(username)
         return render(request, 'demo_frontend/index.html', {'title': title, 'times_classified':times_classified})
     else:
         global redirected_once
         if redirected_once:
-            print("Not logged in")
+            # print("Not logged in")
             title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
-            print(title)
+            # print(title)
             redirected_once = False
             return render(request, 'demo_frontend/index.html', {'title': title, 'times_classified':0})
         else:
-            print("First login")
+            # print("First login")
             redirected_once = True
             return redirect('home')
 
 def add_entry(request):
-    print("Submitted")
+    # print("Submitted")
 
     # increment number of articles classified by user
     username = request.POST.get("username")
@@ -73,11 +73,11 @@ def add_entry(request):
 
 
 
-    # print(values)
+    # # print(values)
     
     # get keywords 
     keyword = request.POST.get("keyword_input").lower()
-    print(keyword)
+    # print(keyword)
     
     # check to see if keywords is in table
     num_results = len(Keywords.objects.filter(keyword = keyword))
@@ -87,7 +87,7 @@ def add_entry(request):
         new_record = Keywords(keyword = keyword, times_classified = 1, computer_science = values["cs_input"], mathematics = values["math_input"], physics = values["physics_input"], electrical_engineering = values["ee_input"], quantitative_biology = values["qbio_input"], statistics = values["stat_input"], economics = values["econ_input"], other = values["other_input"])
         new_record.save()
         title = request.POST.get("title_input")
-        print("TITLE IS: " + title)
+        # print("TITLE IS: " + title)
         update_record2 = Arxiv_Titles_In_Circulation.objects.get(title = title)
         update_record2.times_classified += 1
         update_record2.save()
@@ -98,7 +98,7 @@ def add_entry(request):
         update_record = Keywords.objects.get(keyword = keyword)
 
         title = request.POST.get("title_input")
-        print("TITLE IS: " + title)
+        # print("TITLE IS: " + title)
         update_record2 = Arxiv_Titles_In_Circulation.objects.get(title = title)
 
         # increment times classified
@@ -138,9 +138,9 @@ def add_entry(request):
 
 # if user skips increment total skips for that title
 def skip_entry(request):
-    print("Skipped")
+    # print("Skipped")
     title = request.POST.get("title_input")
-    print(title)
+    # print(title)
 
     update_record = Arxiv_Titles_In_Circulation.objects.get(title = title)
     # increment times classified
@@ -184,13 +184,13 @@ def update_titles_in_circulation():
 def get_title_by_user_subject(username):
     user = User_Extended.objects.get(username = username)
     subject = user.subject
-    # print("User ubject is " + str(subject))
+    # # print("User ubject is " + str(subject))
     titles_by_subject = Arxiv_Titles_In_Circulation.objects.filter(subject=subject)
-    # print("Titles by subject: ", end=" ")
-    # print(len(titles_by_subject))
+    # # print("Titles by subject: ", end=" ")
+    # # print(len(titles_by_subject))
     if len(titles_by_subject) > 0:
         rand_idx = random.randint(0, len(titles_by_subject)-1)
-        # print(titles_by_subject[rand_idx].title)
+        # # print(titles_by_subject[rand_idx].title)
         return titles_by_subject[rand_idx].title
     else:
         return ""
