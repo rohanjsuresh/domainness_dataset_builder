@@ -27,7 +27,6 @@ def register(request):
             return redirect('home')
     else:
         form = UserRegisterForm()
-    print("UHHHHH NOT WHERE")
     return render(request, 'users/register.html', {'form': form})
 
 

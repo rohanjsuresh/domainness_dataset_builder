@@ -200,8 +200,9 @@
   {% if user.is_authenticated %}
   <form method="post" action="/skip_entry/">
     {% csrf_token %}
+    <input name="username2" id="username2" type="text" hidden>
     <input name="title_input" id="title_input2" type="text" hidden>
-    <input type="submit" class="btn btn-light" style="font-size: 30px;" value="Skip This Title" onClick=refresh_selection()></input>
+    <input type="submit" class="btn btn-light" style="font-size: 30px;" value="Skip This Title"></input>
   </form>
   {% else %}
   <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Skip This Title</button>
@@ -406,7 +407,6 @@ if (val == 0) {
 
   display_user_selection_func();
   document.getElementById("keyword_input").value = document.getElementById("display_user_selection").innerHTML;
-  document.getElementById("username").value = document.getElementById("grab_username").innerHTML;
 }
 
 // This function clicks the radio button corressponding to the correct radio button
@@ -514,6 +514,8 @@ function hslToRgb(h, s, l) {
 // When the page loads provide the user with a random Arxiv title
 window.onload = function() {
     readfileautomatically();    
+    document.getElementById("username").value = document.getElementById("grab_username").innerHTML;
+    document.getElementById("username2").value = document.getElementById("grab_username").innerHTML;
 };
 
 </script>

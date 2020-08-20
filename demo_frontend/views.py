@@ -7,13 +7,24 @@ from .models import Arxiv_Titles_Classified
 from .models import User_Extended
 from django.db import connection
 from django.contrib.auth.models import User 
+import random
+from django.shortcuts import redirect
+
 
 # Create your views here.
 
 def home(request):
-    title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
-    print(title)
-    return render(request, 'demo_frontend/index.html', {'title': title})
+    username = request.user
+    if username is not None:
+        print("Logged in")
+        title = get_title_by_user_subject(username)
+        print(title)
+        return render(request, 'demo_frontend/index.html', {'title': title})
+    else:
+        print("Not logged in")
+        title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
+        print(title)
+        return redirect('home')
 
 def add_entry(request):
     print("Submitted")
@@ -64,7 +75,7 @@ def add_entry(request):
 
     # if no results insert new element into table
     if num_results == 0:
-        new_record = Keywords(keyword = keyword, times_classified = 1, computer_science = values["cs_input"], mathematics = values["math_input"], physics = values["physics_input"], astronomy = values["astro_input"], electrical_engineering = values["ee_input"], quantitative_biology = values["qbio_input"], statistics = values["stat_input"], economics = values["econ_input"], other = values["other_input"])
+        new_record = Keywords(keyword = keyword, times_classified = 1, computer_science = values["cs_input"], mathematics = values["math_input"], physics = values["physics_input"], electrical_engineering = values["ee_input"], quantitative_biology = values["qbio_input"], statistics = values["stat_input"], economics = values["econ_input"], other = values["other_input"])
         new_record.save()
 
     # if records already exists, update it
@@ -109,7 +120,7 @@ def add_entry(request):
         # update titles in circulation
         update_titles_in_circulation()
 
-    title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
+    title = get_title_by_user_subject(username)
     return render(request, 'demo_frontend/index.html', {'title': title})
 
 # if user skips increment total skips for that title
@@ -126,7 +137,10 @@ def skip_entry(request):
     # update titles in circulation
     update_titles_in_circulation()
 
-    new_title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
+    username = request.POST.get("username2")
+    print("check me out")
+    print(username)
+    new_title = get_title_by_user_subject(username)
     return render(request, 'demo_frontend/index.html', {'title': new_title})
 
     
@@ -155,6 +169,18 @@ def update_titles_in_circulation():
         cursor.execute('DELETE FROM demo_frontend_arxiv_titles_in_circulation WHERE times_skipped >= 5;')
 
 
-# # keep track of user's field of study and the number of papers they have classified
-# def add_user(request):
+def get_title_by_user_subject(username):
+    user = User_Extended.objects.get(username = username)
+    subject = user.subject
+    # print("User ubject is " + str(subject))
+    titles_by_subject = Arxiv_Titles_In_Circulation.objects.filter(subject=subject)
+    # print("Titles by subject: ", end=" ")
+    # print(len(titles_by_subject))
+    if len(titles_by_subject) > 0:
+        rand_idx = random.randint(0, len(titles_by_subject)-1)
+        # print(titles_by_subject[rand_idx].title)
+        return titles_by_subject[rand_idx].title
+    else:
+        return ""
+
     
