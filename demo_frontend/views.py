@@ -86,6 +86,11 @@ def add_entry(request):
     if num_results == 0:
         new_record = Keywords(keyword = keyword, times_classified = 1, computer_science = values["cs_input"], mathematics = values["math_input"], physics = values["physics_input"], electrical_engineering = values["ee_input"], quantitative_biology = values["qbio_input"], statistics = values["stat_input"], economics = values["econ_input"], other = values["other_input"])
         new_record.save()
+        title = request.POST.get("title_input")
+        print("TITLE IS: " + title)
+        update_record2 = Arxiv_Titles_In_Circulation.objects.get(title = title)
+        update_record2.times_classified += 1
+        update_record2.save()
 
     # if records already exists, update it
     else:
@@ -107,8 +112,6 @@ def add_entry(request):
             update_record.mathematics += values["math_input"] 
         if values["physics_input"] > 0:
             update_record.physics += values["physics_input"] 
-        if values["astro_input"] > 0:
-            update_record.astronomy += values["astro_input"] 
         if values["ee_input"] > 0:
             update_record.electrical_engineering += values["ee_input"] 
         if values["qbio_input"] > 0:
@@ -148,8 +151,6 @@ def skip_entry(request):
     update_titles_in_circulation()
 
     username = request.POST.get("username2")
-    print("check me out")
-    print(username)
     new_title = get_title_by_user_subject(username)
     times_classified = get_number_classified_by_user(username)
     return render(request, 'demo_frontend/index.html', {'title': new_title, 'times_classified':times_classified})

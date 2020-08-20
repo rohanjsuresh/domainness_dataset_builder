@@ -189,7 +189,7 @@
 <hr>
 <div style="text-align: center; padding-bottom: 10px;">
   {% if user.is_authenticated %}
-  <input type="submit" class="btn btn-light" style="font-size: 30px;" value="Submit This Keyword"></input>
+  <input type="submit" class="btn btn-light" style="font-size: 30px;" id="actual_submit" value="Submit This Keyword"></input>
   <!-- <a href="/add_entry/"><button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() >Submit</button></a> -->
   {% else %}
   <input type="submit" class="btn btn-light" style="font-size: 30px;"disabled aria-disabled="true" value="Submit This Title"></input>
@@ -350,7 +350,7 @@
       location.reload();
     }
 
-    function validate_selection(obj) {
+    function validate_selection() {
 
 var i;
 var first = 1;
@@ -358,10 +358,17 @@ var prev_was_post = 0;
 var pre = "btn pre_selected";
 var post = "btn post_selected";
 var curr_id;
+var none_selected = 0;
+document.getElementById("actual_submit").setAttribute('aria-disabled', true);
+document.getElementById("actual_submit").disabled = true;
 for (i = 0; i < phrase_len; i++) {
   
   curr_id = "user_input_" + i;
   if (post.localeCompare(document.getElementById(curr_id).className) == 0) {
+    if (document.getElementById("cs_input").checked || document.getElementById("math_input").checked || document.getElementById("physics_input").checked || document.getElementById("ee_input").checked || document.getElementById("qbio_input").checked || document.getElementById("stat_input").checked || document.getElementById("econ_input").checked || document.getElementById("other_input").checked){
+      document.getElementById("actual_submit").setAttribute('aria-disabled', false);
+      document.getElementById("actual_submit").disabled = false;
+    }
     if (first == 1) {
       // alert("f");
       first = 0;
@@ -395,7 +402,7 @@ if (pre.localeCompare(obj.className) == 0) {
   document.getElementById(obj.id).className = pre;
 }
 
-var val = validate_selection(obj);
+var val = validate_selection();
 
 if (val == 0) {
   if (pre.localeCompare(obj.className) == 0) {
@@ -437,6 +444,7 @@ function click_radio_button(obj) {
     var NewColor = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
     obj.style.backgroundColor = NewColor;
   }
+  validate_selection();
 }
 
 // https://gist.github.com/mjackson/5311256
@@ -517,6 +525,8 @@ window.onload = function() {
     readfileautomatically();    
     document.getElementById("username").value = document.getElementById("grab_username").innerHTML;
     document.getElementById("username2").value = document.getElementById("grab_username").innerHTML;
+    document.getElementById("actual_submit").setAttribute('aria-disabled', true);
+    document.getElementById("actual_submit").disabled = true; 
 };
 
 </script>
