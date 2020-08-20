@@ -155,10 +155,6 @@ def update_titles_in_circulation():
         cursor.execute('DELETE FROM demo_frontend_arxiv_titles_in_circulation WHERE times_skipped >= 5;')
 
 
-# keep track of user's field of study and the number of papers they have classified
-def add_user(request):
-    username = request.POST.get("my_username")
-    email = request.POST.get("my_email")
-    subject = request.POST.get("subject")
-    new_record = User_Extended(username = username, email = email, times_classified=1, subject=subject)
-    new_record.save()
+# # keep track of user's field of study and the number of papers they have classified
+# def add_user(request):
+    
