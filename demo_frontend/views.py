@@ -12,19 +12,27 @@ from django.shortcuts import redirect
 
 
 # Create your views here.
+redirected_once = False
 
 def home(request):
     username = request.user
-    if username is not None:
+    if request.user.is_authenticated:
         print("Logged in")
         title = get_title_by_user_subject(username)
         print(title)
         return render(request, 'demo_frontend/index.html', {'title': title})
     else:
-        print("Not logged in")
-        title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
-        print(title)
-        return redirect('home')
+        global redirected_once
+        if redirected_once:
+            print("Not logged in")
+            title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
+            print(title)
+            redirected_once = False
+            return render(request, 'demo_frontend/index.html', {'title': title})
+        else:
+            print("First login")
+            redirected_once = True
+            return redirect('home')
 
 def add_entry(request):
     print("Submitted")
