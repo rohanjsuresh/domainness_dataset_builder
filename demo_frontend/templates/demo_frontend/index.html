@@ -105,13 +105,14 @@
   {% endif %}
 
   <!-- logged in as message -->
-  <div class="media" style="padding-top: 20px;">
+  <div style="padding-top: 20px;">
     {% if user.is_authenticated %}
-      <h1 style="padding-left: 2%;">Logged in as: {{ user.username }}</h1>
+      <h2 style="padding-left: 2%;">Logged in as: {{ user.username }}</h2>
+      <h3 style="padding-left: 2%;">{{ linebreaks }}You have classified <strong><u>{{ times_classified }}</u></strong> papers.</h3>
     {% else %}
       <h1 style="padding-left: 2%;">You are not logged in yet.</h1>
       <p></p>
-      <h1 class="text-white"><a href="{% url 'login' %}">&nbsp;Login here</a></h1>
+      <h1 style="padding-left: 2%;" class="text-white"><a href="{% url 'login' %}">&nbsp;Login here</a></h1>
     {% endif %}
   </div>
 
@@ -127,7 +128,7 @@
 
 <!-- prompt -->
 <div style="padding-left: 2%; padding-top: 2%; padding-bottom:2%">
-  <h>Which subject do you think this words belongs to: </h>
+  <h>After reading the title please select a/the most relevant keyword/keyphrase in the title and then classify it into the appropriate subject:</h>
 </div>
 
 <!-- word and context -->

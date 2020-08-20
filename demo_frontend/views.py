@@ -20,7 +20,8 @@ def home(request):
         print("Logged in")
         title = get_title_by_user_subject(username)
         print(title)
-        return render(request, 'demo_frontend/index.html', {'title': title})
+        times_classified = get_number_classified_by_user(username)
+        return render(request, 'demo_frontend/index.html', {'title': title, 'times_classified':times_classified})
     else:
         global redirected_once
         if redirected_once:
@@ -28,7 +29,7 @@ def home(request):
             title = Arxiv_Titles_In_Circulation.objects.order_by('?').first().title
             print(title)
             redirected_once = False
-            return render(request, 'demo_frontend/index.html', {'title': title})
+            return render(request, 'demo_frontend/index.html', {'title': title, 'times_classified':0})
         else:
             print("First login")
             redirected_once = True
@@ -129,7 +130,8 @@ def add_entry(request):
         update_titles_in_circulation()
 
     title = get_title_by_user_subject(username)
-    return render(request, 'demo_frontend/index.html', {'title': title})
+    times_classified = get_number_classified_by_user(username)
+    return render(request, 'demo_frontend/index.html', {'title': title, 'times_classified':times_classified})
 
 # if user skips increment total skips for that title
 def skip_entry(request):
@@ -149,7 +151,8 @@ def skip_entry(request):
     print("check me out")
     print(username)
     new_title = get_title_by_user_subject(username)
-    return render(request, 'demo_frontend/index.html', {'title': new_title})
+    times_classified = get_number_classified_by_user(username)
+    return render(request, 'demo_frontend/index.html', {'title': new_title, 'times_classified':times_classified})
 
     
 
@@ -191,4 +194,7 @@ def get_title_by_user_subject(username):
     else:
         return ""
 
+def get_number_classified_by_user(username):
+    user = User_Extended.objects.get(username = username)
+    return user.times_classified
     
