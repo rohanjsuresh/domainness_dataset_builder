@@ -3,8 +3,8 @@ import json
 
 mydb = mysql.connector.connect(
   host="127.0.0.1",
-  user="root",
-  password="",
+  user="rohanjs2",
+  password="changeme",
   port='3306',
   database="domainness_dataset_builder"
 )
