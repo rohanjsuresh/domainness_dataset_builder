@@ -12,7 +12,7 @@ Can also be run locally/a different server. To do so, in the directory where the
 [http://owl.cs.illinois.edu:8000/](http://owl.cs.illinois.edu:8000/) - Home Page <br />
 [http://owl.cs.illinois.edu:8000/register/](http://owl.cs.illinois.edu:8000/register/) - Register Page <br />
 [http://owl.cs.illinois.edu:8000/login/](http://owl.cs.illinois.edu:8000/login/) - Login Page <br />
-[http://owl.cs.illinois.edu:8000/logout/](http://owl.cs.illinois.edu:8000/logout/ - Logout Page <br />
+[http://owl.cs.illinois.edu:8000/logout/](http://owl.cs.illinois.edu:8000/logout/) - Logout Page <br />
 [http://owl.cs.illinois.edu:8000/admin/](http://owl.cs.illinois.edu:8000/admin/) - Admin Page <br />
 
 # Example Images
