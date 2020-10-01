@@ -2,8 +2,8 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Domainness Dataset Builder</title>
-  <meta name="description" content="Domainness Dataset Builder">
+  <title>Keyword Relationship Builder</title>
+  <meta name="description" content="Keyword Relationship Builder">
   <meta name="author" content="SitePoint">
 
   <!-- Required meta tags -->
@@ -57,36 +57,46 @@
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
+        <div class="col-sm-4 py-4">
           <h4 class="text-white">About</h4>
           <p class="text-muted">Project Info</p>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
+
+        <div class="col-sm-4  py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Email</a></li>
-            <li><a href="#" class="text-white">GitHub</a></li>
-            <li><a href="#" class="text-white">LinkedIn</a></li>
+            <li><a href="rohanjs2@illinois.edu" class="text-white">Email</a></li>
+            <li><a href="https://github.com/rohanjsuresh/domainness_dataset_builder" class="text-white">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/rohan-j-suresh/" class="text-white">LinkedIn</a></li>
           </ul>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          {% if user.is_authenticated %}
-            <h4 class="text-white"><a href="{% url 'logout' %}">Logout</a></h4>
-          {% else %}
-            <h4 class="text-white"><a href="{% url 'login' %}">Login</a></h4>
-          {% endif %}
+
+        <div class="col-sm-4 py-4">
+          <h4 class="text-white">Important Links</h4>
+          <ul class="list-unstyled">
+            <!-- link to domainness dataset builder -->
+            <li><a href="{% url 'home'%}" class="text-white">Domainness Dataset Builder</a></li>
+        
+              {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}" class="text-white">Logout</a></li>
+              {% else %}
+                <li><a href="{% url 'login' %}" class="text-white">Login</a></li>
+              {% endif %}
+
+          </ul>
         </div>
+
       </div>
     </div>
   </div>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container d-flex justify-content-between">
-      <a href="{% url 'home'%}" class="navbar-brand d-flex align-items-center">
+      <a href="{% url 'keyword_relation_home'%}" class="navbar-brand d-flex align-items-center">
         <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
           <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
         </svg>
-        <strong>Domainness Dataset Builder</strong>
+        <strong>Keyword Relationship Builder</strong>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -127,7 +137,7 @@
 
     <h5 class="mt-0">Task Description</h5>
     <p style="padding-left: 0%;">The application will present you with a random keyword. Under this there will a list of red buttons containing different random keywords. Please select the keyword buttons that relate to the above keyword then hit submit.</p>
-    <p style="padding-left: 0%;">Click on a keyword to have the iFrame below pull up the Wikipedia page for it. Will default to the word you are finding relations to.</p>
+    <p style="padding-left: 0%;">Click on a keyword to have the iFrame below pull up the Wikipedia page for it (the Google link below that will also automatically update the search query). Will default to the word you are finding relations to.</p>
   </div>
 </div>
 
@@ -159,11 +169,11 @@
   <input name="title_input" id="title_input" type="text" hidden>
   <input name="k1" id="{{keyword1}}_input" type="radio" hidden>
   <input name="k2" id="{{keyword2}}_input" type="radio" hidden>
-  <input name="k3"id="{{keyword3}}_input" type="radio" hidden>
+  <input name="k3" id="{{keyword3}}_input" type="radio" hidden>
   <input name="k4" id="{{keyword4}}_input" type="radio" hidden>
   <input name="k5" id="{{keyword5}}_input" type="radio" hidden>
   <input name="k6" id="{{keyword6}}_input" type="radio" hidden>
-  <input name="k7"id="{{keyword7}}_input" type="radio" hidden>
+  <input name="k7" id="{{keyword7}}_input" type="radio" hidden>
   <input name="k8" id="{{keyword8}}_input" type="radio" hidden>
 <div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
   <h3>Select Keywords That Relate to <strong>{{title}}</strong></h3>
@@ -205,7 +215,7 @@
   <form method="post" action="/keyword_relation/skip_entry/">
     {% csrf_token %}
     <input name="username2" id="username2" type="text" hidden>
-    <input name="title_input" id="title_input2" type="text" hidden>
+    <input name="keyword_input2" id="keyword_input2" type="text" hidden>
     <input type="submit" class="btn btn-light" style="font-size: 30px;" value="Skip This Title"></input>
   </form>
   {% else %}
@@ -257,17 +267,15 @@
 
         // // display random keywords chosen in a large title
         // document.getElementById("wiki_title").innerHTML = txt[random];
-
         keyword_glob = document.getElementById("wiki_title").innerHTML;
-        document.getElementById("title_input").value = document.getElementById("wiki_title").innerHTML;
-        document.getElementById("title_input2").value = document.getElementById("wiki_title").innerHTML;
+        // document.getElementById("title_input").value = document.getElementById("wiki_title").innerHTML;
+        // document.getElementById("title_input2").value = document.getElementById("wiki_title").innerHTML;
         // use iframe to show wikipedia page as well
         // base url
         var wiki_url_start = "https://en.wikipedia.org/wiki/";
         // concatenate to create full url
         var wiki_url_full = wiki_url_start.concat(document.getElementById("wiki_title").innerHTML);
         document.getElementById("context_frame").src = wiki_url_full;
-
         // use google to allow user to do further research
         // base url
         var google_url_start = "https://www.google.com/search?q=";
@@ -283,12 +291,11 @@
         // logs for debugging
         // console.log(wiki_url_full);
         // console.log(document.getElementById("wiki_title").innerHTML);
-
         // update form
         // alert(document.getElementById("wiki_title").innerHTML);
         document.getElementById("keyword_input").value = document.getElementById("wiki_title").innerHTML;
+        document.getElementById("keyword_input2").value = document.getElementById("wiki_title").innerHTML;
         // alert(document.getElementById("keyword_input").value);
-        alert("oope");
     }
 
     // This function splits the keyword/phrase into an array of words, and renders them as clickable buttons that the user can select as appropriate 

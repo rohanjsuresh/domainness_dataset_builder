@@ -57,25 +57,35 @@
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
+        <div class="col-sm-4 py-4">
           <h4 class="text-white">About</h4>
           <p class="text-muted">Project Info</p>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
+
+        <div class="col-sm-4  py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Email</a></li>
-            <li><a href="#" class="text-white">GitHub</a></li>
-            <li><a href="#" class="text-white">LinkedIn</a></li>
+            <li><a href="rohanjs2@illinois.edu" class="text-white">Email</a></li>
+            <li><a href="https://github.com/rohanjsuresh/domainness_dataset_builder" class="text-white">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/rohan-j-suresh/" class="text-white">LinkedIn</a></li>
           </ul>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          {% if user.is_authenticated %}
-            <h4 class="text-white"><a href="{% url 'logout' %}">Logout</a></h4>
-          {% else %}
-            <h4 class="text-white"><a href="{% url 'login' %}">Login</a></h4>
-          {% endif %}
+
+        <div class="col-sm-4 py-4">
+          <h4 class="text-white">Important Links</h4>
+          <ul class="list-unstyled">
+            <!-- link to domainness dataset builder -->
+            <li><a href="{% url 'keyword_relation_home'%}" class="text-white">Keyword Relationship Builder</a></li>
+        
+              {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}" class="text-white">Logout</a></li>
+              {% else %}
+                <li><a href="{% url 'login' %}" class="text-white">Login</a></li>
+              {% endif %}
+
+          </ul>
         </div>
+
       </div>
     </div>
   </div>

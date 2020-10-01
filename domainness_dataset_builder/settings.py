@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'demo_frontend',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'keyword_relation_builder',
 ]
 
 MIDDLEWARE = [
