@@ -1,0 +1,593 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Domainness Dataset Builder</title>
+  <meta name="description" content="Domainness Dataset Builder">
+  <meta name="author" content="SitePoint">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+  <!-- Extra styles -->
+  <style>
+    /* style for user selection buttons */
+    .pre_selected {
+      color: white;
+      background-color: #bd2222;
+      border-color: #bd2222;
+    }
+
+    .pre_selected:hover {
+      color: white;
+      background-color: #961b1b;
+      border-color: #701414;
+    }
+
+    .post_selected {
+      color: white;
+      background-color: #22bd34;
+      border-color: #22bd34;
+    }
+
+    .post_selected:hover {
+      color: white;
+      background-color: #1c8a28;
+      border-color: #176e20;
+    }
+
+    .input_selected {
+      color: white;
+      background-color: #283c63;
+      border-color: #283c63;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- header -->
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-muted">Project Info</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Email</a></li>
+            <li><a href="#" class="text-white">GitHub</a></li>
+            <li><a href="#" class="text-white">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          {% if user.is_authenticated %}
+            <h4 class="text-white"><a href="{% url 'logout' %}">Logout</a></h4>
+          {% else %}
+            <h4 class="text-white"><a href="{% url 'login' %}">Login</a></h4>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="{% url 'home'%}" class="navbar-brand d-flex align-items-center">
+        <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+        </svg>
+        <strong>Domainness Dataset Builder</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <!-- alerts -->
+  {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" style="padding-left: 2%; padding-top: 2%; padding-bottom:2%">
+            {{ message }}
+        </div>
+    {% endfor %}
+  {% endif %}
+
+  <!-- logged in as message -->
+  <div style="padding-top: 20px;">
+    {% if user.is_authenticated %}
+      <h2 style="padding-left: 2%;">Logged in as: {{ user.username }}</h2>
+      <h3 style="padding-left: 2%;">{{ linebreaks }}You have classified <strong><u>{{ times_classified }}</u></strong> papers/words.</h3>
+    {% else %}
+      <h1 style="padding-left: 2%;">You are not logged in yet.</h1>
+      <p></p>
+      <h1 style="padding-left: 2%;" class="text-white"><a href="{% url 'login' %}">&nbsp;Login here</a></h1>
+      <h1 style="padding-left: 2%;" class="text-white"><a href="{% url 'register' %}">&nbsp;Register here</a></h1>
+    {% endif %}
+  </div>
+
+<!-- jumbo -->
+
+<div class="media" style="padding-top: 20px;">
+  <!-- <img src="..." class="mr-3" alt="..."> -->
+  <div class="media-body", style="padding-left: 2%;">
+
+    <p style="padding-left: 0%;">Hello! We are researchers from the <a href="http://www.forwarddatalab.org/">FORWARD Lab @ UIUC</a> and we need your help collecting data. You can help us by classifying related keywords</p>
+
+    <h5 class="mt-0">Task Description</h5>
+    <p style="padding-left: 0%;">The application will present you with a random keyword. Under this there will a list of red buttons containing different random keywords. Please select the keyword buttons that relate to the above keyword then hit submit.</p>
+    <p style="padding-left: 0%;">Click on a keyword to have the iFrame below pull up the Wikipedia page for it. Will default to the word you are finding relations to.</p>
+  </div>
+</div>
+
+<!-- prompt -->
+<!-- <div style="padding-left: 2%; padding-top: 2%; padding-bottom:2%">
+  <h>After reading the title please select a/the most relevant keyword/keyphrase in the title and then classify it into the appropriate subject:</h>
+</div> -->
+
+<!-- word and context -->
+<div class="card" style="width: 100%; text-align: center;">
+  <h3>Please select the keywords that relate to:</h3>
+  <!-- <h1 style="font-size: 72px" id="wiki_title">{{ title }}</h1> -->
+
+  <div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+    <button type="button" class="btn btn-outline-primary selection" onClick=obj_update_iframe(this) id="wiki_title" style="font-size: 50px; width:20%; text-align: center;">{{title}}</button>
+  </div>
+
+  <hr></hr>
+  <!-- <h3>Select Keyword/Keyphrases: </h3>
+  <div style="padding-bottom: 2%" id="button_generate"></div>
+  <h3 id="display_user_selection" style="color: #cfc8c8;"></h3> -->
+</div>
+<p hidden id="grab_username">{{ user.username }}</p> 
+<!-- buttons -->
+<form method="post" action="/keyword_relation/add_entry/">
+  {% csrf_token %}
+  <input name="username" id="username" type="text" hidden>
+  <input name="keyword_input" id="keyword_input" type="text" hidden>
+  <input name="title_input" id="title_input" type="text" hidden>
+  <input name="k1" id="{{keyword1}}_input" type="radio" hidden>
+  <input name="k2" id="{{keyword2}}_input" type="radio" hidden>
+  <input name="k3"id="{{keyword3}}_input" type="radio" hidden>
+  <input name="k4" id="{{keyword4}}_input" type="radio" hidden>
+  <input name="k5" id="{{keyword5}}_input" type="radio" hidden>
+  <input name="k6" id="{{keyword6}}_input" type="radio" hidden>
+  <input name="k7"id="{{keyword7}}_input" type="radio" hidden>
+  <input name="k8" id="{{keyword8}}_input" type="radio" hidden>
+<div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+  <h3>Select Keywords That Relate to <strong>{{title}}</strong></h3>
+  <!-- selection only enabled when logged in -->
+  {% if user.is_authenticated %}
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="{{keyword1}}" onclick=click_radio_button(this)>{{keyword1}}</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="{{keyword2}}" onclick=click_radio_button(this)>{{keyword2}}</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="{{keyword3}}" onclick=click_radio_button(this)>{{keyword3}}</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="{{keyword4}}" onclick=click_radio_button(this)>{{keyword4}}</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="{{keyword5}}" onclick=click_radio_button(this)>{{keyword5}}</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="{{keyword6}}" onclick=click_radio_button(this)>{{keyword6}}</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="{{keyword7}}" onclick=click_radio_button(this)>{{keyword7}}</button>
+  <button type="button" class="btn btn-primary selection" style="font-size: 30px;" id="{{keyword8}}" onclick=click_radio_button(this)>{{keyword8}}</button>
+  {% else %}
+  <h4>You must login to submit responses</h4>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">{{keyword1}}</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">{{keyword2}}</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">{{keyword3}}</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">{{keyword4}}</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">{{keyword5}}</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">{{keyword6}}</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">{{keyword7}}</button>
+  <button type="button" class="btn btn-primary" style="font-size: 30px;" disabled aria-disabled="true">{{keyword8}}</button>
+  {% endif %}
+</div>
+<hr>
+<div style="text-align: center; padding-bottom: 10px;">
+  {% if user.is_authenticated %}
+  <input type="submit" class="btn btn-light" style="font-size: 30px;" id="actual_submit" value="Submit This Keyword"></input>
+  <!-- <a href="/add_entry/"><button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection() >Submit</button></a> -->
+  {% else %}
+  <input type="submit" class="btn btn-light" style="font-size: 30px;"disabled aria-disabled="true" value="Submit This Title"></input>
+  {% endif %}
+</div>
+</form>
+
+<div style="text-align: center; padding-bottom: 10px;">
+  {% if user.is_authenticated %}
+  <form method="post" action="/keyword_relation/skip_entry/">
+    {% csrf_token %}
+    <input name="username2" id="username2" type="text" hidden>
+    <input name="title_input" id="title_input2" type="text" hidden>
+    <input type="submit" class="btn btn-light" style="font-size: 30px;" value="Skip This Title"></input>
+  </form>
+  {% else %}
+  <button type="button" class="btn btn-light" style="font-size: 30px;"  onClick=refresh_selection()>Skip This Title</button>
+  {% endif %}
+</div>
+
+<!-- context -->
+<div class="card" style="width: 100%; text-align: center;">
+  <div class="card-body" style="padding-top: 5px">
+    <h3>In context: </h3>
+    <!-- <h5 class="card-title">Card title</h5> -->
+    <!-- wiki summary programatic -->
+    <!-- <p class="card-text" id="wiki_summary"></p> -->
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <iframe id="context_frame" style="width:75%; height:300"></iframe>
+  </div>
+  <div class="card-body">
+    <h3>Further context: </h3>
+    <h2><a id="context_google" target="_blank">Google</a></h2>
+  </div>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script>
+
+      // global variables
+      var phrase_len = 0;
+      var keyword_glob;
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    // TODO: Modify function to read txt file and not use hardcoded value. Faced issue with browser security restrctions reading local files so reverted to hardcoded values for now. 
+    function readfileautomatically () {
+        // harcoded options
+        // var txt = ["auto","break", "case", "char", "continue", "do", "default", "const", "double", "else", "enum", "extern", "for", "if", "goto", "float", "int", "long", "register", "return", "signed", "static", "sizeof", "short", "struct", "switch", "typedef", "union", "void", "while", "volatile", "unsigned", "1951 Bulgarian Cup", "Paris lace", "Naomi Tani", "Trichogypsia", "Kamoinge", "Bad Tabarz", "Peter Tannock", "Cherdynsky District", "Chantal Singer", "Judith S. Stern", "Sophie Trudeau (musician)", "Charles de Eendero", "Rhapsody No. 1 (Bartók)", "Thomas Percy (Pilgrimage of Grace)", "Home Economics Building (Torrance High School)", "Boophis albipunctatus", "Criminal Code of Belarus", "Iraq–Jordan relations", "Stone Brothers Racing", "Martigan Belt: An Adventure in the Asteroids", "St. Andrew's Basilica, Arthunkal", "1978 ABC Championship for Women", "Vu T. Thu Ha", "Emporia Formation", "Nellikunnu", "Peter Daka", "Rodrigo Faro", "Satonari", "Exo-CBX", "Vesyoly, Prokhorovsky District, Belgorod Oblast", "Thomas McKean Thompson McKennan", "Cool warehouse", "Goodbye Dear Wife", "City bus service no. 20 (Ljubljana)", "Leo Kurauzvione", "Izu stingray", "Conrad Davis Mock", "Bristol Jamia Mosque", "Osbert de Bayeux", "Magela hardyhead", "Robert Mermoud", "Greatness", "Heritage Guitars", "Brian Davis (American football)", "Liverpool Ramblers A.F.C.", "Pierre Cahuzac", "John de Graham", "Automata theory", "List of municipalities in Hakkari Province", "Broyles Award", "2012–13 Cowdenbeath F.C. season", "Deep map", "Megan Rice", "Tails Adventure", "Ephrata Municipal Airport", "FIS Freestyle World Ski Championships 2011 – Women's slopestyle", "George Beurling", "Daniel Pelosi", "The Homecoming of Odysseus (1922 film)", "SandHoke Early College", "Lilley, Hertfordshire", "Francis Augustus Cox", "1945 Montana Grizzlies football team", "César Zeoula", "TWR 70-000 series", "Ron Fountain", "HD 96660", "Poylu, Poylu", "Rashidabad, Tehran", "Discovery of human antiquity", "Letterbreen", "Richard Gwyn (Canadian writer)", "Walang Tulugan with the Master Showman", "Kamloops Water Aerodrome", "Mound Township, Effingham County, Illinois", "The Dragnet Solar Pons et al.", "Rakhee Sandilya", "Inter Press Service", "List of abductors of the human body", "Solliès-Pont", "Ganjikunta", "French Canadians", "First family of the United States", "Crabapple, Georgia", "RAF Joyce Green", "International Confederation of Revolver Enthusiasts", "1977 French Open – Mixed Doubles", "Norman Creek (Missouri)", "Elizabeth railway station"];
+        // var txt = ["Transfer Fine-Tuning: A BERT Case Study", "Anharmonic oscillations of a conical buoy", "The tusk condition and Petrovski criterion for the normalized", "MALTS: Matching After Learning to Stretch"];
+
+        // // choose random index 
+        // var random = getRandomInt(txt.length);
+        // console.log(random);
+
+
+        // // display random keywords chosen in a large title
+        // document.getElementById("wiki_title").innerHTML = txt[random];
+
+        keyword_glob = document.getElementById("wiki_title").innerHTML;
+        document.getElementById("title_input").value = document.getElementById("wiki_title").innerHTML;
+        document.getElementById("title_input2").value = document.getElementById("wiki_title").innerHTML;
+        // use iframe to show wikipedia page as well
+        // base url
+        var wiki_url_start = "https://en.wikipedia.org/wiki/";
+        // concatenate to create full url
+        var wiki_url_full = wiki_url_start.concat(document.getElementById("wiki_title").innerHTML);
+        document.getElementById("context_frame").src = wiki_url_full;
+
+        // use google to allow user to do further research
+        // base url
+        var google_url_start = "https://www.google.com/search?q=";
+        // replace spaces in keyword/phrase with %20
+        var google_query = document.getElementById("wiki_title").innerHTML.replace(' ', '%20');
+        // concatenate to create full url
+        var google_url_full = google_url_start.concat(google_query);
+        document.getElementById("context_google").href = google_url_full;
+
+        // call function to create buttons
+        // create_button_selection(document.getElementById("wiki_title").innerHTML);
+
+        // logs for debugging
+        // console.log(wiki_url_full);
+        // console.log(document.getElementById("wiki_title").innerHTML);
+
+        // update form
+        // alert(document.getElementById("wiki_title").innerHTML);
+        document.getElementById("keyword_input").value = document.getElementById("wiki_title").innerHTML;
+        // alert(document.getElementById("keyword_input").value);
+        alert("oope");
+    }
+
+    // This function splits the keyword/phrase into an array of words, and renders them as clickable buttons that the user can select as appropriate 
+    // keywords or keyphrases
+    function create_button_selection (keywp) {
+      // split keyphrase into array
+      var key_arr = keywp.split(" ");
+
+      
+      // generate html
+      var i;
+      phrase_len = key_arr.length;
+      var html = ""
+      for (i = 0; i < key_arr.length; i++) {
+        html += '<button type="button" class="btn pre_selected" style="font-size: 30px;" onclick="flip_selection(this)" id=user_input_' + i  + '>' + key_arr[i] + '</button>';
+      }
+      
+      document.getElementById("button_generate").innerHTML = html;
+
+    }
+
+    function update_iframe (keyword) {
+
+      var search = keyword;
+
+      var wiki_url_start = "https://en.wikipedia.org/wiki/";
+      // concatenate to create full url
+      if (search.length == 0) {
+        search = keyword_glob;
+      }
+      search.replace(' ', '%20');
+
+      var wiki_url_full = wiki_url_start.concat(search);
+      document.getElementById("context_frame").src = wiki_url_full;
+
+      var google_url_start = "https://www.google.com/search?q=";
+      var google_url_full = google_url_start.concat(search);
+      document.getElementById("context_google").href = google_url_full;
+
+    }
+
+    function obj_update_iframe (obj) {
+
+      var search = document.getElementById(obj.id).innerHTML;
+
+      var wiki_url_start = "https://en.wikipedia.org/wiki/";
+      // concatenate to create full url
+      if (search.length == 0) {
+        search = keyword_glob;
+      }
+      search.replace(' ', '%20');
+
+      var wiki_url_full = wiki_url_start.concat(search);
+      document.getElementById("context_frame").src = wiki_url_full;
+
+      var google_url_start = "https://www.google.com/search?q=";
+      var google_url_full = google_url_start.concat(search);
+      document.getElementById("context_google").href = google_url_full;
+
+}
+
+    function display_user_selection_func () {
+      var i;
+      var user_selection = "";
+      var selection_highlight = "";
+      var pre = "btn pre_selected";
+      var post = "btn post_selected";
+      var curr_id;
+      var search = "";
+
+      for (i = 0; i < phrase_len; i++) {
+        curr_id = "user_input_" + i;
+        if (post.localeCompare(document.getElementById(curr_id).className) == 0) {
+          user_selection += document.getElementById(curr_id).innerHTML;
+          user_selection += " ";
+          search += document.getElementById(curr_id).innerHTML;
+          search += " ";
+          selection_highlight += "<mark>"
+          selection_highlight += document.getElementById(curr_id).innerHTML;
+          selection_highlight += "</mark>";
+        } else {
+          selection_highlight += document.getElementById(curr_id).innerHTML;
+          selection_highlight += " ";
+        }
+      }
+
+      document.getElementById("display_user_selection").innerHTML = user_selection;
+      document.getElementById("wiki_title").innerHTML = selection_highlight;
+
+      var wiki_url_start = "https://en.wikipedia.org/wiki/";
+      // concatenate to create full url
+      if (search.length == 0) {
+        search = keyword_glob;
+      }
+      search.replace(' ', '%20');
+      var wiki_url_full = wiki_url_start.concat(search);
+      document.getElementById("context_frame").src = wiki_url_full;
+
+      var google_url_start = "https://www.google.com/search?q=";
+      var google_url_full = google_url_start.concat(search);
+      document.getElementById("context_google").href = google_url_full;
+    }
+
+    function refresh_selection() {
+      document.getElementById("display_user_selection").innerHTML = "";
+      create_button_selection(keyword_glob);
+      location.reload();
+    }
+
+    function validate_selection() {
+
+var i;
+var first = 1;
+var prev_was_post = 0;
+var pre = "btn pre_selected";
+var post = "btn post_selected";
+var curr_id;
+var none_selected = 0;
+document.getElementById("actual_submit").setAttribute('aria-disabled', true);
+document.getElementById("actual_submit").disabled = true;
+for (i = 0; i < phrase_len; i++) {
+  
+  curr_id = "user_input_" + i;
+  if (post.localeCompare(document.getElementById(curr_id).className) == 0) {
+    if (document.getElementById("cs_input").checked || document.getElementById("math_input").checked || document.getElementById("physics_input").checked || document.getElementById("ee_input").checked || document.getElementById("qbio_input").checked || document.getElementById("stat_input").checked || document.getElementById("econ_input").checked || document.getElementById("other_input").checked){
+      document.getElementById("actual_submit").setAttribute('aria-disabled', false);
+      document.getElementById("actual_submit").disabled = false;
+    }
+    if (first == 1) {
+      // alert("f");
+      first = 0;
+      prev_was_post = 1
+    } else if (prev_was_post == 0) {
+      // alert("zero");
+      return 0;
+    }
+
+  } else {
+    // alert("yah");
+    prev_was_post = 0;
+  }
+
+  // alert(first);
+  // alert(prev_was_post);
+}
+// alert("1");
+return 1;
+}
+
+// This function changes the class of the button from pre-selected <=> post-selected
+function flip_selection(obj) {
+
+var pre = "btn pre_selected";
+var post = "btn post_selected";
+
+if (pre.localeCompare(obj.className) == 0) {
+  document.getElementById(obj.id).className = post;
+} else if (post.localeCompare(obj.className) == 0) {
+  document.getElementById(obj.id).className = pre;
+}
+
+var val = validate_selection();
+
+if (val == 0) {
+  if (pre.localeCompare(obj.className) == 0) {
+    document.getElementById(obj.id).className = post;
+  } else if (post.localeCompare(obj.className) == 0) {
+    document.getElementById(obj.id).className = pre;
+  }
+  alert("Please only select words next to each other to create a phrase");
+} 
+
+  display_user_selection_func();
+  document.getElementById("keyword_input").value = document.getElementById("wiki_title").innerHTML;
+  // alert(document.getElementById("keyword_input").value);
+}
+
+// This function clicks the radio button corressponding to the correct radio button
+function click_radio_button(obj) {
+
+  var keyword = obj.id;
+  var radio_id = keyword.concat("_input");
+
+
+  // var subject = (obj.id).split("_")[0];
+  // var radio_id = subject.concat("_input");
+  var button_color = window.getComputedStyle(obj).getPropertyValue("background-color");
+  button_color = button_color.split("(")[1];
+  var r = parseInt(button_color.split(",")[0], 10);
+  var g = parseInt(button_color.split(",")[1], 10);
+  var b = parseInt(button_color.split(",")[2].split(")")[0], 10);
+  var hsl = rgbToHsl(r, g, b);
+  if(document.getElementById(radio_id).checked) {
+    document.getElementById(radio_id).checked = false;
+    // alert("lighten");
+    update_iframe(keyword_glob);
+    hsl[2] = hsl[2]+0.2;
+    hsl[1] = hsl[1]+0.2;
+    var rgb = hslToRgb(hsl[0], hsl[1], hsl[2]);
+    var NewColor = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
+    obj.style.backgroundColor = NewColor;
+  }else {
+    document.getElementById(radio_id).checked = true;
+    // alert("darker");
+    update_iframe(obj.id);
+    hsl[2] = hsl[2]-0.2;
+    hsl[1] = hsl[1]-0.2;
+    var rgb = hslToRgb(hsl[0], hsl[1], hsl[2]);
+    var NewColor = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
+    obj.style.backgroundColor = NewColor;
+  }
+  // validate_selection();
+}
+
+// https://gist.github.com/mjackson/5311256
+/**
+ * Converts an RGB color value to HSL. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes r, g, and b are contained in the set [0, 255] and
+ * returns h, s, and l in the set [0, 1].
+ *
+ * @param   Number  r       The red color value
+ * @param   Number  g       The green color value
+ * @param   Number  b       The blue color value
+ * @return  Array           The HSL representation
+ */
+ function rgbToHsl(r, g, b) {
+  r /= 255, g /= 255, b /= 255;
+
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
+  var h, s, l = (max + min) / 2;
+
+  if (max == min) {
+    h = s = 0; // achromatic
+  } else {
+    var d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+
+    h /= 6;
+  }
+
+  return [ h, s, l ];
+}
+
+/**
+ * Converts an HSL color value to RGB. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes h, s, and l are contained in the set [0, 1] and
+ * returns r, g, and b in the set [0, 255].
+ *
+ * @param   Number  h       The hue
+ * @param   Number  s       The saturation
+ * @param   Number  l       The lightness
+ * @return  Array           The RGB representation
+ */
+function hslToRgb(h, s, l) {
+  var r, g, b;
+
+  if (s == 0) {
+    r = g = b = l; // achromatic
+  } else {
+    function hue2rgb(p, q, t) {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1/6) return p + (q - p) * 6 * t;
+      if (t < 1/2) return q;
+      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+      return p;
+    }
+
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    var p = 2 * l - q;
+
+    r = hue2rgb(p, q, h + 1/3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1/3);
+  }
+
+  return [ r * 255, g * 255, b * 255 ];
+}
+
+// When the page loads provide the user with a random Arxiv title
+window.onload = function() {
+    readfileautomatically();    
+    document.getElementById("username").value = document.getElementById("grab_username").innerHTML;
+    document.getElementById("username2").value = document.getElementById("grab_username").innerHTML;
+    // document.getElementById("actual_submit").setAttribute('aria-disabled', true);
+    // document.getElementById("actual_submit").disabled = true; 
+};
+
+</script>
+
+</body>
+</html>
+
+

@@ -22,6 +22,7 @@ from users import views as user_views
 
 urlpatterns = [
     path(r'', include('demo_frontend.urls')),
+    path(r'keyword_relation/', include('keyword_relation_builder.urls')),
     path(r'admin/', admin.site.urls),
     path(r'register/', user_views.register, name='register'),
     path(r'main_page/', user_views.main_page, name='main_page'),
